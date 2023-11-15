@@ -1,0 +1,19 @@
+{
+  "expo": {
+    "scheme": "com.swiftybynaali",
+    "web": {
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router"
+    ],
+    "name": "swifty_companion",
+    "slug": "swifty_companion",
+    "android": {
+      "package": "com.naali.swifty_companion"
+    },
+    "ios": {
+      "bundleIdentifier": "com.naali.swiftycompanion"
+    }
+  }
+}
