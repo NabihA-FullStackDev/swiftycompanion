@@ -1,17 +1,16 @@
 import axios from "axios";
 
-const getMe = async (token) => {
-  const requestUrl = "v2/me";
+const getUrl = async (requestUrl, token, params={}) => {
   try {
     const res = await axios.get(requestUrl, {
       headers: {
         "Content-Type": "application/vnd.api+json",
-        Authorization: "Bearer " + token,
-        // access_token: token,
+        Authorization: 'Bearer ' + token,
       },
+      ...params,
     });
     if (res.status === 200) {
-      console.log(res);
+      return (JSON(res.data));
     } else {
       console.log("error");
     }
@@ -20,4 +19,4 @@ const getMe = async (token) => {
   }
 };
 
-export default getMe;
+export default getUrl;

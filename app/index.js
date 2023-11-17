@@ -1,20 +1,28 @@
 import { useEffect, useState } from "react";
-import { View, SafeAreaView } from "react-native";
+import { SafeAreaView } from "react-native";
 import { Stack, useRouter } from "expo-router";
-import axios from 'axios';
+import axios from "axios";
 
+import { API_URL } from "@env";
+import { COLORS } from "./constants/theme";
 import OAuthBtn from "./components/auth/OAuthBtn";
 import getToken from "./requests/getToken";
-import { API_URL } from '@env';
-import { COLORS } from "./constants/theme";
-import getMe from "./requests/getMe";
+import getUrl from "./requests/getUrl.js";
 
 axios.defaults.baseURL = API_URL;
 
 const Home = () => {
   const [code, setCode] = useState();
-  const [token, setToken] = useState('');
+  const [token, setToken] = useState("");
   const router = useRouter();
+
+  // Todo: Creer les fonction pour la validation du token
+  // useEffect(() => {
+  //   let tmp;
+  //   if ((tmp = getFromStore("access_token")) !== NULL) {
+  //     if (verify_token_validity(tmp) == true) setToken(tmp);
+  //   }
+  // }, []);
 
   useEffect(() => {
     if (code) {
@@ -24,19 +32,23 @@ const Home = () => {
 
   useEffect(() => {
     if (token) {
-      getMe(token);
-      // router.push(`/search/Search`);
+      const user = getUrl("v2/me", token); //Todo: recuperer user et l'envoyer a la route user
+      console.log(user);
+      putInStore("access_token", token);
+      // router.push(`views/search/Search`);// Todo: a transformer en route user
     }
-  }, [token])
-  console.log(token);
+  }, [token]);
+
   return (
-    <SafeAreaView style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Stack.Screen 
-      options={{
-        headerStyle: { backgroundColor: COLORS.primary },
-        headerShadowVisible: false,
-        headerTitle: ""
-       }}
+    <SafeAreaView
+      style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
+    >
+      <Stack.Screen
+        options={{
+          headerStyle: { backgroundColor: COLORS.primary },
+          headerShadowVisible: false,
+          headerTitle: "",
+        }}
       />
       <OAuthBtn setCode={setCode} />
     </SafeAreaView>
