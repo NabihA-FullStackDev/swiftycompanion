@@ -17,11 +17,16 @@ const Home = () => {
   const [profile, setProfile] = useState(null);
   const router = useRouter();
 
-  // Todo: Creer les fonction pour la validation du token
+  // Todo: Creer les fonction pour la validation du token <-- Las modification ici
   // useEffect(() => {
   //   let tmp;
   //   if ((tmp = getFromStore("access_token")) !== NULL) {
-  //     if (verify_token_validity(tmp) == true) setToken(tmp);
+  //     if (verify_token_validity(tmp) == true) {
+  //       setToken(tmp);
+  //     } else {
+  //       refreshToken();
+  //     }
+  //     tmp = NULL;
   //   }
   // }, []);
 
