@@ -18,11 +18,11 @@ const OAuthBtn = ({ setCode }) => {
         urlRedirect,
         { ASWebAuthenticationSession: false }
       );
-      console.log(urlRedirect);
-      if (res.type === "success") {
-        const code = res.url.toString().split("code=")[1];
-        setCode(code);
+      if (res.type !== "success") {
+        throw new Error('Login failed');
       }
+      const code = res.url.toString().split("code=")[1];
+      setCode(code);
     } catch (error) {
       console.log(error);
     }
