@@ -21,14 +21,24 @@ const getToken = async (code, setToken, setRefresh) => {
     }
   } catch (error) {
 <<<<<<< HEAD
+<<<<<<< HEAD
     console.log('Catched error in getToken:');
     console.log(error.stack);
 =======
+=======
+>>>>>>> 1c20ff0 (Correction request getMe)
     if (error.message.split(" ").slice(-1)[0] === "429") {
       getToken(code, setToken, setRefresh);
     }
     console.log(error);
+<<<<<<< HEAD
 >>>>>>> 4e95064 (Renew request for 429, add anti spam, better loading)
+=======
+=======
+    console.log('Catched error in getToken:');
+    console.log(error.stack);
+>>>>>>> 26437fc (Correction request getMe)
+>>>>>>> 1c20ff0 (Correction request getMe)
   }
 };
 

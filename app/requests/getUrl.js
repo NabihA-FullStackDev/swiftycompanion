@@ -10,13 +10,22 @@ const getUrl = async (requestUrl, token, setter, params = {}) => {
       ...params,
     });
 <<<<<<< HEAD
+<<<<<<< HEAD
     if (res.status !== 200) {
 =======
+=======
+>>>>>>> 1c20ff0 (Correction request getMe)
     const data = await res.data;
     if (res.status === 200) {
       console.log(data);//TODO: delete
     } else {
+<<<<<<< HEAD
 >>>>>>> 934d90e (Review views (Login/NavBar profile/Search))
+=======
+=======
+    if (res.status !== 200) {
+>>>>>>> 26437fc (Correction request getMe)
+>>>>>>> 1c20ff0 (Correction request getMe)
       console.log("error");
       throw new Error("User not found");
     }
