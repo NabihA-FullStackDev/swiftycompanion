@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { SafeAreaView } from "react-native";
+import { Text, SafeAreaView } from "react-native";
 import { Stack, useRouter } from "expo-router";
 import axios from "axios";
 
@@ -14,6 +14,7 @@ axios.defaults.baseURL = API_URL;
 const Home = () => {
   const [code, setCode] = useState();
   const [token, setToken] = useState("");
+  const [profile, setProfile] = useState(null);
   const router = useRouter();
 
   // Todo: Creer les fonction pour la validation du token
@@ -32,13 +33,13 @@ const Home = () => {
 
   useEffect(() => {
     if (token) {
-      const user = getUrl("v2/me", token); //Todo: recuperer user et l'envoyer a la route user
-      console.log(user);
-      putInStore("access_token", token);
+      getUrl("/v2/me", token, setProfile); //Todo: recuperer user et l'envoyer a la route user
+      // putInStore("access_token", token);
       // router.push(`views/search/Search`);// Todo: a transformer en route user
     }
   }, [token]);
 
+  console.log(profile);
   return (
     <SafeAreaView
       style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
@@ -50,7 +51,7 @@ const Home = () => {
           headerTitle: "",
         }}
       />
-      <OAuthBtn setCode={setCode} />
+      {profile == null ? <OAuthBtn setCode={setCode} /> : <Text>Profile</Text>}
     </SafeAreaView>
   );
 };

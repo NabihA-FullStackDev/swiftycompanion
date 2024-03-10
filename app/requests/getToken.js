@@ -21,8 +21,8 @@ const getToken = async (code, setToken) => {
       setToken(res.data.access_token);
     }
   } catch (error) {
-    console.log(urlRedirect);
-    console.log(error);
+    console.log('Catched error in getToken:');
+    console.log(error.stack);
   }
 };
 
