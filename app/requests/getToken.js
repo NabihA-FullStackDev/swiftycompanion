@@ -69,6 +69,7 @@ const getToken = async (code, setToken, setRefresh) => {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     console.log('Catched error in getToken:');
     console.log(error.stack);
 =======
@@ -80,6 +81,8 @@ const getToken = async (code, setToken, setRefresh) => {
 >>>>>>> 98593d6 (Correction request getMe)
 =======
 >>>>>>> 0fb997a (Renew request for 429, add anti spam, better loading)
+=======
+>>>>>>> 7021bef (Correction request getMe)
     if (error.message.split(" ").slice(-1)[0] === "429") {
       getToken(code, setToken, setRefresh);
     }
@@ -101,16 +104,33 @@ const getToken = async (code, setToken, setRefresh) => {
 >>>>>>> 98593d6 (Correction request getMe)
 =======
 =======
+=======
+>>>>>>> a897929 (Correction request getMe)
     console.log('Catched error in getToken:');
     console.log(error.stack);
 =======
+=======
+>>>>>>> 1c20ff0 (Correction request getMe)
     if (error.message.split(" ").slice(-1)[0] === "429") {
       getToken(code, setToken, setRefresh);
     }
     console.log(error);
+<<<<<<< HEAD
 >>>>>>> 4e95064 (Renew request for 429, add anti spam, better loading)
+<<<<<<< HEAD
 >>>>>>> 8539d30 (Renew request for 429, add anti spam, better loading)
+<<<<<<< HEAD
 >>>>>>> 0fb997a (Renew request for 429, add anti spam, better loading)
+=======
+=======
+=======
+=======
+    console.log('Catched error in getToken:');
+    console.log(error.stack);
+>>>>>>> 26437fc (Correction request getMe)
+>>>>>>> 1c20ff0 (Correction request getMe)
+>>>>>>> a897929 (Correction request getMe)
+>>>>>>> 7021bef (Correction request getMe)
   }
 };
 
