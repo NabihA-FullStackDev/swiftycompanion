@@ -9,7 +9,11 @@ import {
 } from "react-native";
 =======
 import { View, Text, TouchableOpacity } from "react-native";
+<<<<<<< HEAD
 >>>>>>> 934d90e (Review views (Login/NavBar profile/Search))
+=======
+>>>>>>> 2145d28 (Review views (Login/NavBar profile/Search))
+>>>>>>> df16014 (Review views (Login/NavBar profile/Search))
 import { StyleSheet } from "react-native";
 
 import { getCode } from "../requests/getCode.js";
@@ -38,16 +42,27 @@ const LoginScreen = () => {
 =======
 
 const LoginScreen = () => {
+<<<<<<< HEAD
   const { setToken, setRefresh } = useAuth();
+=======
+  const { setToken } = useAuth();
+>>>>>>> df16014 (Review views (Login/NavBar profile/Search))
 
   const handlePress = async () => {
     try {
       const code = await getCode();
       if (code !== "") {
+<<<<<<< HEAD
         await getToken(code, setToken, setRefresh);
       }
     } catch (error) {
 >>>>>>> 934d90e (Review views (Login/NavBar profile/Search))
+=======
+        await getToken(code, setToken);
+      }
+    } catch (error) {
+>>>>>>> 2145d28 (Review views (Login/NavBar profile/Search))
+>>>>>>> df16014 (Review views (Login/NavBar profile/Search))
       console.log(error);
     }
   };
@@ -88,7 +103,11 @@ const LoginScreen = () => {
       >
         <Text style={styles.textLogin}>{`Log with 42`}</Text>
       </TouchableOpacity>
+<<<<<<< HEAD
 >>>>>>> 934d90e (Review views (Login/NavBar profile/Search))
+=======
+>>>>>>> 2145d28 (Review views (Login/NavBar profile/Search))
+>>>>>>> df16014 (Review views (Login/NavBar profile/Search))
     </View>
   );
 };
@@ -155,4 +174,8 @@ const styles = StyleSheet.create((theme) => ({
     fontWeight: "400",
   },
 }));
+<<<<<<< HEAD
 >>>>>>> 934d90e (Review views (Login/NavBar profile/Search))
+=======
+>>>>>>> 2145d28 (Review views (Login/NavBar profile/Search))
+>>>>>>> df16014 (Review views (Login/NavBar profile/Search))

@@ -1,8 +1,11 @@
 import { Tabs } from "expo-router";
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 386e34e (header profile ok search screen)
+=======
+>>>>>>> df16014 (Review views (Login/NavBar profile/Search))
 import FontAwesome from "@expo/vector-icons/FontAwesome.js";
 
 const TabsLayout = () => {
@@ -20,7 +23,11 @@ import { Text, View } from "react-native";
 const TabsLayout = () => {
   return (
     <Tabs initialRouteName="profile">
+<<<<<<< HEAD
 >>>>>>> 934d90e (Review views (Login/NavBar profile/Search))
+=======
+>>>>>>> 2145d28 (Review views (Login/NavBar profile/Search))
+>>>>>>> df16014 (Review views (Login/NavBar profile/Search))
       <Tabs.Screen
         name="profile"
         options={{
@@ -32,6 +39,9 @@ const TabsLayout = () => {
           ),
           headerShown: false,
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> df16014 (Review views (Login/NavBar profile/Search))
 =======
             <View
               style={{
@@ -46,9 +56,13 @@ const TabsLayout = () => {
               </Text>
             </View>
           ),
+<<<<<<< HEAD
 >>>>>>> 934d90e (Review views (Login/NavBar profile/Search))
 =======
 >>>>>>> 386e34e (header profile ok search screen)
+=======
+>>>>>>> 2145d28 (Review views (Login/NavBar profile/Search))
+>>>>>>> df16014 (Review views (Login/NavBar profile/Search))
         }}
       />
       <Tabs.Screen
@@ -62,6 +76,9 @@ const TabsLayout = () => {
           ),
           headerShown: false,
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> df16014 (Review views (Login/NavBar profile/Search))
 =======
             <View
               style={{
@@ -76,9 +93,13 @@ const TabsLayout = () => {
               </Text>
             </View>
           ),
+<<<<<<< HEAD
 >>>>>>> 934d90e (Review views (Login/NavBar profile/Search))
 =======
 >>>>>>> 386e34e (header profile ok search screen)
+=======
+>>>>>>> 2145d28 (Review views (Login/NavBar profile/Search))
+>>>>>>> df16014 (Review views (Login/NavBar profile/Search))
         }}
       />
     </Tabs>

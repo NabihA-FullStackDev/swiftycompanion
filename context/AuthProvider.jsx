@@ -3,7 +3,11 @@ import { createContext, useContext, useEffect, useState } from "react";
 <<<<<<< HEAD
 import { Platform } from "react-native";
 =======
+<<<<<<< HEAD
 >>>>>>> 934d90e (Review views (Login/NavBar profile/Search))
+=======
+>>>>>>> 2145d28 (Review views (Login/NavBar profile/Search))
+>>>>>>> df16014 (Review views (Login/NavBar profile/Search))
 
 const AuthContext = createContext({
   token: null,
@@ -34,13 +38,20 @@ export const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(null);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 4e95064 (Renew request for 429, add anti spam, better loading)
+=======
+>>>>>>> df16014 (Review views (Login/NavBar profile/Search))
   const [refresh, setRefresh] = useState(null);
   const [profile, setProfile] = useState(null);
   const [coalition, setCoalition] = useState(null);
 =======
+<<<<<<< HEAD
 >>>>>>> 934d90e (Review views (Login/NavBar profile/Search))
+=======
+>>>>>>> 2145d28 (Review views (Login/NavBar profile/Search))
+>>>>>>> df16014 (Review views (Login/NavBar profile/Search))
 
   useProtectedRoute(token);
 
@@ -49,8 +60,11 @@ export const AuthProvider = ({ children }) => {
     setToken,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 4e95064 (Renew request for 429, add anti spam, better loading)
+=======
+>>>>>>> df16014 (Review views (Login/NavBar profile/Search))
     refresh,
     setRefresh,
     profile,
@@ -58,7 +72,11 @@ export const AuthProvider = ({ children }) => {
     coalition,
     setCoalition
 =======
+<<<<<<< HEAD
 >>>>>>> 934d90e (Review views (Login/NavBar profile/Search))
+=======
+>>>>>>> 2145d28 (Review views (Login/NavBar profile/Search))
+>>>>>>> df16014 (Review views (Login/NavBar profile/Search))
   };
 
   return (

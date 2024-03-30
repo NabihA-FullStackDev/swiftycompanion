@@ -1,5 +1,8 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> df16014 (Review views (Login/NavBar profile/Search))
 import {
   View,
 =======
@@ -96,6 +99,7 @@ const Profile = () => {
   return (
     <View>
       <Text>profile</Text>
+<<<<<<< HEAD
 >>>>>>> 934d90e (Review views (Login/NavBar profile/Search))
 =======
   return (
@@ -120,6 +124,9 @@ const Profile = () => {
         </View>
       )}
 >>>>>>> 386e34e (header profile ok search screen)
+=======
+>>>>>>> 2145d28 (Review views (Login/NavBar profile/Search))
+>>>>>>> df16014 (Review views (Login/NavBar profile/Search))
     </View>
   );
 };
@@ -127,8 +134,11 @@ const Profile = () => {
 export default Profile;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 386e34e (header profile ok search screen)
+=======
+>>>>>>> df16014 (Review views (Login/NavBar profile/Search))
 
 const styles = StyleSheet.create({
   root: {
@@ -146,6 +156,7 @@ const styles = StyleSheet.create({
   },
 });
 =======
+<<<<<<< HEAD
 >>>>>>> 934d90e (Review views (Login/NavBar profile/Search))
 =======
     backgroundColor: "#D4D4D4",
@@ -158,3 +169,6 @@ const styles = StyleSheet.create({
   },
 });
 >>>>>>> 386e34e (header profile ok search screen)
+=======
+>>>>>>> 2145d28 (Review views (Login/NavBar profile/Search))
+>>>>>>> df16014 (Review views (Login/NavBar profile/Search))

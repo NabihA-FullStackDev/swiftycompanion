@@ -1,5 +1,8 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> df16014 (Review views (Login/NavBar profile/Search))
 import {
   View,
 =======
@@ -105,6 +108,7 @@ const Search = () => {
 =======
 import { View, Text } from "react-native";
 import React from "react";
+<<<<<<< HEAD
 =======
   SafeAreaView,
 } from "react-native";
@@ -156,6 +160,14 @@ const Search = () => {
         </View>
       )}
 >>>>>>> 386e34e (header profile ok search screen)
+=======
+
+const Search = () => {
+  return (
+    <View>
+      <Text>search</Text>
+>>>>>>> 2145d28 (Review views (Login/NavBar profile/Search))
+>>>>>>> df16014 (Review views (Login/NavBar profile/Search))
     </View>
   );
 };
@@ -163,8 +175,11 @@ const Search = () => {
 export default Search;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 386e34e (header profile ok search screen)
+=======
+>>>>>>> df16014 (Review views (Login/NavBar profile/Search))
 
 const styles = StyleSheet.create({
   root: {
@@ -203,6 +218,7 @@ const styles = StyleSheet.create({
   },
 });
 =======
+<<<<<<< HEAD
 >>>>>>> 934d90e (Review views (Login/NavBar profile/Search))
 =======
     justifyContent: 'center',
@@ -221,3 +237,6 @@ const styles = StyleSheet.create({
   }
 });
 >>>>>>> 386e34e (header profile ok search screen)
+=======
+>>>>>>> 2145d28 (Review views (Login/NavBar profile/Search))
+>>>>>>> df16014 (Review views (Login/NavBar profile/Search))
