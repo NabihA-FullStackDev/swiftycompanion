@@ -1,18 +1,18 @@
 import axios from "axios";
 
-const getMe = async (token, setProfile) => {
-  const requestUrl = "v2/me";
+const getUserProjects = async (user, token, params={}) => {
+    const requestUrl = '/v2/users/' + user + '/projects_users'
   try {
     const res = await axios.get(requestUrl, {
       headers: {
         "Content-Type": "application/vnd.api+json",
-        Authorization: "Bearer " + token,
-        // access_token: token,
+        Authorization: 'Bearer ' + token,
       },
+      ...params,
     });
     const data = await res.data;
     if (res.status === 200) {
-      setProfile(data);
+      console.log(data);
     } else {
       console.log("error");
     }
@@ -21,4 +21,4 @@ const getMe = async (token, setProfile) => {
   }
 };
 
-export default getMe;
+export default getUserProjects;

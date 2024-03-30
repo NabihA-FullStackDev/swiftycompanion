@@ -9,8 +9,9 @@ const getUrl = async (requestUrl, token, params={}) => {
       },
       ...params,
     });
+    const data = await res.data;
     if (res.status === 200) {
-      return (JSON(res.data));
+      console.log(data);
     } else {
       console.log("error");
     }
