@@ -1,3 +1,6 @@
+import { StyleSheet } from "react-native";
+
+
 const COLORS = {
     primary: "#292d38",
     secondary: "#4180db",
@@ -17,5 +20,20 @@ const COLORS = {
     xxLarge: 32,
   };
   
-  export { COLORS, SIZES };
+  const styles = StyleSheet.create({
+    root: {
+      flex: 1,
+    },
+    bg: {
+      flex: 1,
+      alignItems: "center",
+      justifyContent: "center",
+    },
+    screen: {
+      alignItems: 'center',
+      justifyContent: 'center'
+    }
+  });
+
+  export { COLORS, SIZES, styles };
   
