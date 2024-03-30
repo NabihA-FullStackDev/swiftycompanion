@@ -11,6 +11,7 @@ const getUrl = async (requestUrl, token, setter, params = {}) => {
     });
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     if (res.status !== 200) {
 =======
 =======
@@ -18,6 +19,11 @@ const getUrl = async (requestUrl, token, setter, params = {}) => {
     const data = await res.data;
     if (res.status === 200) {
       console.log(data);//TODO: delete
+=======
+    const data = await res.data;
+    if (res.status === 200) {
+      console.log(data);
+>>>>>>> 934d90e (Review views (Login/NavBar profile/Search))
     } else {
 <<<<<<< HEAD
 >>>>>>> 934d90e (Review views (Login/NavBar profile/Search))

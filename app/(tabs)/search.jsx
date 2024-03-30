@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import {
   View,
   TouchableOpacity,
@@ -83,11 +84,21 @@ const Search = () => {
           <ActivityIndicator size={"large"} />
         </View>
       )}
+=======
+import { View, Text } from "react-native";
+import React from "react";
+
+const Search = () => {
+  return (
+    <View>
+      <Text>search</Text>
+>>>>>>> 934d90e (Review views (Login/NavBar profile/Search))
     </View>
   );
 };
 
 export default Search;
+<<<<<<< HEAD
 
 const styles = StyleSheet.create({
   root: {
@@ -124,3 +135,5 @@ const styles = StyleSheet.create({
     color: "red",
   },
 });
+=======
+>>>>>>> 934d90e (Review views (Login/NavBar profile/Search))

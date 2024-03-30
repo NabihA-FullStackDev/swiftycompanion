@@ -1,6 +1,9 @@
 import { useSegments, useRouter, useRootNavigationState } from "expo-router";
 import { createContext, useContext, useEffect, useState } from "react";
+<<<<<<< HEAD
 import { Platform } from "react-native";
+=======
+>>>>>>> 934d90e (Review views (Login/NavBar profile/Search))
 
 const AuthContext = createContext({
   token: null,
@@ -29,21 +32,27 @@ function useProtectedRoute(token) {
 
 export const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(null);
+<<<<<<< HEAD
   const [refresh, setRefresh] = useState(null);
   const [profile, setProfile] = useState(null);
   const [coalition, setCoalition] = useState(null);
+=======
+>>>>>>> 934d90e (Review views (Login/NavBar profile/Search))
 
   useProtectedRoute(token);
 
   const authContext = {
     token,
     setToken,
+<<<<<<< HEAD
     refresh,
     setRefresh,
     profile,
     setProfile,
     coalition,
     setCoalition
+=======
+>>>>>>> 934d90e (Review views (Login/NavBar profile/Search))
   };
 
   return (

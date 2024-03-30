@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import {
   View,
   ActivityIndicator,
@@ -59,11 +60,21 @@ const Profile = () => {
           <ActivityIndicator size={"large"} />
         </View>
       )}
+=======
+import { View, Text } from "react-native";
+import React from "react";
+
+const Profile = () => {
+  return (
+    <View>
+      <Text>profile</Text>
+>>>>>>> 934d90e (Review views (Login/NavBar profile/Search))
     </View>
   );
 };
 
 export default Profile;
+<<<<<<< HEAD
 
 const styles = StyleSheet.create({
   root: {
@@ -76,3 +87,5 @@ const styles = StyleSheet.create({
     paddingTop: 42,
   },
 });
+=======
+>>>>>>> 934d90e (Review views (Login/NavBar profile/Search))
