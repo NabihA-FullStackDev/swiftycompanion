@@ -1,27 +1,25 @@
 import { Tabs } from "expo-router";
-import { Text, View } from "react-native";
+import { Image, Text, View } from "react-native";
+import FontAwesome from "@expo/vector-icons/FontAwesome.js";
+
+import icons from "../../constant/icons.js";
 
 const TabsLayout = () => {
   return (
-    <Tabs initialRouteName="profile">
+    <Tabs
+      initialRouteName="profile"
+      screenOptions={{
+        tabBarActiveTintColor: "blue",
+        tabBarInactiveTintColor: "grey",
+      }}
+    >
       <Tabs.Screen
         name="profile"
         options={{
           href: "/profile",
           title: "",
           tabBarIcon: ({ color }) => (
-            <View
-              style={{
-                flexDirection: "column",
-                alignItems: "center",
-                marginTop: 17,
-                backgroundColor: "transparent",
-              }}
-            >
-              <Text style={{ marginTop: 5, fontSize: 10, opacity: 0.5 }}>
-                Profile
-              </Text>
-            </View>
+            <FontAwesome name="user" size={24} color={color} />
           ),
         }}
       />
@@ -31,18 +29,7 @@ const TabsLayout = () => {
           href: "/search",
           title: "",
           tabBarIcon: ({ color }) => (
-            <View
-              style={{
-                flexDirection: "column",
-                alignItems: "center",
-                marginTop: 17,
-                backgroundColor: "transparent",
-              }}
-            >
-              <Text style={{ marginTop: 5, fontSize: 10, opacity: 0.5 }}>
-                Search
-              </Text>
-            </View>
+            <FontAwesome name="search" size={24} color={color} />
           ),
         }}
       />
