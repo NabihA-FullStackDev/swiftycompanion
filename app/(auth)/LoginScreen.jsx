@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity, ImageBackground } from "react-native";
 import { StyleSheet } from "react-native";
 
 import { getCode } from "../requests/getCode.js";
@@ -20,38 +20,48 @@ const LoginScreen = () => {
   };
 
   return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <TouchableOpacity
-        onPress={() => handlePress()}
-        style={styles.buttonLogin}
-      >
-        <Text style={styles.textLogin}>{`Log with 42`}</Text>
-      </TouchableOpacity>
+    <View style={styles.root}>
+      <ImageBackground style={styles.background} source={require('../../assets/Background.jpeg')}>
+        <TouchableOpacity
+          onPress={() => handlePress()}
+          style={styles.buttonLogin}
+        >
+          <Text style={styles.textLogin}>{`Log with 42`}</Text>
+        </TouchableOpacity>
+      </ImageBackground>
     </View>
   );
 };
 
 export default LoginScreen;
 
-const styles = StyleSheet.create((theme) => ({
+const styles = StyleSheet.create({
+  root: {
+    flex: 1,
+  },
+  background: {
+    height: '100%',
+    alignItems: "center",
+    justifyContent: "center",
+  },
   buttonLogin: {
     width: 190,
-    height: 42,
+    height: 63,
     flexShrink: 0,
     borderRadius: 10,
+    alignItems: "center",
+    justifyContent: "center",
     backgroundColor: "rgba(217, 217, 217, 0.45098039507865906)",
   },
   textLogin: {
-    width: 168,
+    width: 190,
     height: 42,
-    flexDirection: "column",
-    justifyContent: "center",
     flexShrink: 0,
-    color: "rgba(0, 0, 255, 1)",
+    color: "rgba(255, 255, 255, 1)",
     textAlign: "center",
-    fontFamily: "Inter",
-    fontSize: 25,
+    fontSize: 24,
     fontStyle: "normal",
     fontWeight: "400",
+    paddingTop: 5,
   },
-}));
+});
