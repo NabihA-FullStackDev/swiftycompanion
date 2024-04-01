@@ -1,15 +1,22 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> df16014 (Review views (Login/NavBar profile/Search))
+=======
+>>>>>>> ffaf808 (header profile ok search screen)
 import {
   View,
 =======
 import {
   View,
   Text,
+<<<<<<< HEAD
 >>>>>>> 386e34e (header profile ok search screen)
+=======
+>>>>>>> 31aa7f0 (header profile ok search screen)
+>>>>>>> ffaf808 (header profile ok search screen)
   TouchableOpacity,
   ActivityIndicator,
   StyleSheet,
@@ -17,8 +24,11 @@ import {
   TextInput,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 4e95064 (Renew request for 429, add anti spam, better loading)
+=======
+>>>>>>> ffaf808 (header profile ok search screen)
   Text,
 } from "react-native";
 import React, { useState } from "react";
@@ -109,6 +119,9 @@ const Search = () => {
 import { View, Text } from "react-native";
 import React from "react";
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ffaf808 (header profile ok search screen)
 =======
   SafeAreaView,
 } from "react-native";
@@ -119,6 +132,7 @@ import { useAuth } from "../../context/AuthProvider.jsx";
 import getMe from "../requests/getMe.js";
 import getCoaUser from "../requests/getCoaUser.js";
 import HeaderProfile from "../components/profile/HeaderProfile.jsx";
+<<<<<<< HEAD
 >>>>>>> 386e34e (header profile ok search screen)
 
 const Search = () => {
@@ -161,13 +175,49 @@ const Search = () => {
       )}
 >>>>>>> 386e34e (header profile ok search screen)
 =======
+=======
+>>>>>>> 31aa7f0 (header profile ok search screen)
+>>>>>>> ffaf808 (header profile ok search screen)
 
 const Search = () => {
+  const [profile, setProfile] = useState(null);
+  const [coalition, setCoalition] = useState("");
+  const { token, setToken } = useAuth();
+
+  const handlePress = () => {
+    setToken(null);
+  };
+
+  useEffect(() => {
+    if (!profile && token) {
+      getMe(token, setProfile);
+    }
+    if (profile && token) {
+      getCoaUser(profile.id, token, setCoalition);
+    }
+  }, [profile]);
+
   return (
+<<<<<<< HEAD
     <View>
       <Text>search</Text>
 >>>>>>> 2145d28 (Review views (Login/NavBar profile/Search))
+<<<<<<< HEAD
 >>>>>>> df16014 (Review views (Login/NavBar profile/Search))
+=======
+=======
+    <View style={styles.root}>
+      {profile && coalition ? (
+        <>
+          <ImageBackground style={styles.background} source={{ uri: coalition }}>
+              <TextInput style={styles.input} placeholder="Login" autoCapitalize="none" placeholderTextColor={'rgba(1,1,1, 1)'}/>
+          </ImageBackground>
+        </>
+      ) : (
+        <ActivityIndicator size={"large"} />
+      )}
+>>>>>>> 31aa7f0 (header profile ok search screen)
+>>>>>>> ffaf808 (header profile ok search screen)
     </View>
   );
 };
@@ -176,10 +226,15 @@ export default Search;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 386e34e (header profile ok search screen)
 =======
 >>>>>>> df16014 (Review views (Login/NavBar profile/Search))
+=======
+=======
+>>>>>>> 31aa7f0 (header profile ok search screen)
+>>>>>>> ffaf808 (header profile ok search screen)
 
 const styles = StyleSheet.create({
   root: {
@@ -239,4 +294,24 @@ const styles = StyleSheet.create({
 >>>>>>> 386e34e (header profile ok search screen)
 =======
 >>>>>>> 2145d28 (Review views (Login/NavBar profile/Search))
+<<<<<<< HEAD
 >>>>>>> df16014 (Review views (Login/NavBar profile/Search))
+=======
+=======
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  input: {
+    width: '60%',
+    height: '5%',
+    alignItems: 'center',
+    alignContent: 'center',
+    justifyContent: 'center',
+    backgroundColor: '"rgba(198, 198, 198, 0.5)"',
+    zIndex: 999,
+    borderRadius: 5,
+    textAlign: 'center',
+  }
+});
+>>>>>>> 31aa7f0 (header profile ok search screen)
+>>>>>>> ffaf808 (header profile ok search screen)

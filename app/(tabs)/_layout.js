@@ -2,10 +2,15 @@ import { Tabs } from "expo-router";
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 386e34e (header profile ok search screen)
 =======
 >>>>>>> df16014 (Review views (Login/NavBar profile/Search))
+=======
+=======
+>>>>>>> 31aa7f0 (header profile ok search screen)
+>>>>>>> ffaf808 (header profile ok search screen)
 import FontAwesome from "@expo/vector-icons/FontAwesome.js";
 
 const TabsLayout = () => {
@@ -40,8 +45,11 @@ const TabsLayout = () => {
           headerShown: false,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> df16014 (Review views (Login/NavBar profile/Search))
+=======
+>>>>>>> ffaf808 (header profile ok search screen)
 =======
             <View
               style={{
@@ -62,7 +70,12 @@ const TabsLayout = () => {
 >>>>>>> 386e34e (header profile ok search screen)
 =======
 >>>>>>> 2145d28 (Review views (Login/NavBar profile/Search))
+<<<<<<< HEAD
 >>>>>>> df16014 (Review views (Login/NavBar profile/Search))
+=======
+=======
+>>>>>>> 31aa7f0 (header profile ok search screen)
+>>>>>>> ffaf808 (header profile ok search screen)
         }}
       />
       <Tabs.Screen
@@ -77,8 +90,11 @@ const TabsLayout = () => {
           headerShown: false,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> df16014 (Review views (Login/NavBar profile/Search))
+=======
+>>>>>>> ffaf808 (header profile ok search screen)
 =======
             <View
               style={{
@@ -99,7 +115,12 @@ const TabsLayout = () => {
 >>>>>>> 386e34e (header profile ok search screen)
 =======
 >>>>>>> 2145d28 (Review views (Login/NavBar profile/Search))
+<<<<<<< HEAD
 >>>>>>> df16014 (Review views (Login/NavBar profile/Search))
+=======
+=======
+>>>>>>> 31aa7f0 (header profile ok search screen)
+>>>>>>> ffaf808 (header profile ok search screen)
         }}
       />
     </Tabs>

@@ -93,7 +93,11 @@ const LoginScreen = () => {
         >
           <Text style={styles.textLogin}>{`Log in with 42`}</Text>
         </TouchableOpacity>
+<<<<<<< HEAD
 >>>>>>> 386e34e (header profile ok search screen)
+=======
+>>>>>>> 31aa7f0 (header profile ok search screen)
+>>>>>>> ffaf808 (header profile ok search screen)
       </ImageBackground>
 =======
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
@@ -126,7 +130,11 @@ const styles = StyleSheet.create({
 =======
     height: '100%',
     width: '100%',
+<<<<<<< HEAD
 >>>>>>> 386e34e (header profile ok search screen)
+=======
+>>>>>>> 31aa7f0 (header profile ok search screen)
+>>>>>>> ffaf808 (header profile ok search screen)
     alignItems: "center",
     justifyContent: "center",
   },

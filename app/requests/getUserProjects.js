@@ -15,6 +15,7 @@ const getUserProjects = async (user, token, params={}) => {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       return data;
 =======
       console.log(data);
@@ -23,11 +24,19 @@ const getUserProjects = async (user, token, params={}) => {
       console.log(data);//TODO: delete
 >>>>>>> 386e34e (header profile ok search screen)
 =======
+=======
+>>>>>>> ffaf808 (header profile ok search screen)
       return data;
 =======
       console.log(data);
 >>>>>>> 2145d28 (Review views (Login/NavBar profile/Search))
+<<<<<<< HEAD
 >>>>>>> df16014 (Review views (Login/NavBar profile/Search))
+=======
+=======
+      console.log(data);//TODO: delete
+>>>>>>> 31aa7f0 (header profile ok search screen)
+>>>>>>> ffaf808 (header profile ok search screen)
     } else {
       console.log("error");
     }

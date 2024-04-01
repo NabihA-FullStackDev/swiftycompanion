@@ -16,17 +16,25 @@ const getCoaUser = async (id, token, setCoa) => {
       await setCoa(selectBackground(data));
 =======
         await setCoa(selectBackground(data));
+<<<<<<< HEAD
 >>>>>>> 386e34e (header profile ok search screen)
+=======
+>>>>>>> 31aa7f0 (header profile ok search screen)
+>>>>>>> ffaf808 (header profile ok search screen)
     } else {
       console.log("error");
     }
   } catch (error) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ffaf808 (header profile ok search screen)
     if (error.response?.status === 429) {
       getCoaUser(id, token, setCoa);
     } else console.log("getCoaUser", error.response.status);
 =======
+<<<<<<< HEAD
 =======
     if (error.message.split(" ").slice(-1)[0] === "429") {
       getCoaUser(id, token, setCoa);
@@ -34,6 +42,10 @@ const getCoaUser = async (id, token, setCoa) => {
 >>>>>>> 4e95064 (Renew request for 429, add anti spam, better loading)
     console.log(error);
 >>>>>>> 386e34e (header profile ok search screen)
+=======
+    console.log(error);
+>>>>>>> 31aa7f0 (header profile ok search screen)
+>>>>>>> ffaf808 (header profile ok search screen)
   }
 };
 

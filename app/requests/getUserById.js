@@ -6,7 +6,11 @@ const getUserById = async (id, token) => {
 =======
 const getUserById = async (id, token, setProfile) => {
   const requestUrl = "v2/users" + id;
+<<<<<<< HEAD
 >>>>>>> 386e34e (header profile ok search screen)
+=======
+>>>>>>> 31aa7f0 (header profile ok search screen)
+>>>>>>> ffaf808 (header profile ok search screen)
   try {
     const res = await axios.get(requestUrl, {
       headers: {
@@ -20,19 +24,27 @@ const getUserById = async (id, token, setProfile) => {
       return data;
 =======
       setProfile(data);
+<<<<<<< HEAD
 >>>>>>> 386e34e (header profile ok search screen)
+=======
+>>>>>>> 31aa7f0 (header profile ok search screen)
+>>>>>>> ffaf808 (header profile ok search screen)
     } else {
       console.log("error");
     }
   } catch (error) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ffaf808 (header profile ok search screen)
     if (error.response?.status === 429) {
       return getUserById(id, token);
     }
     console.log("getUserById", error);
 =======
     console.log(error);
+<<<<<<< HEAD
 >>>>>>> 386e34e (header profile ok search screen)
 =======
     if (error.message.split(" ").slice(-1)[0] === "429") {
@@ -40,6 +52,9 @@ const getUserById = async (id, token, setProfile) => {
     }
     console.log("getUserById", error);
 >>>>>>> 4e95064 (Renew request for 429, add anti spam, better loading)
+=======
+>>>>>>> 31aa7f0 (header profile ok search screen)
+>>>>>>> ffaf808 (header profile ok search screen)
   }
 };
 

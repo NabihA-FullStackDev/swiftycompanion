@@ -4,7 +4,11 @@ import axios from "axios";
 const getUserByLogin = async (login, token) => {
 =======
 const getUserByLogin = async (login, token, setProfile) => {
+<<<<<<< HEAD
 >>>>>>> 386e34e (header profile ok search screen)
+=======
+>>>>>>> 31aa7f0 (header profile ok search screen)
+>>>>>>> ffaf808 (header profile ok search screen)
   const requestUrl = "v2/users";
   try {
     const res = await axios.get(requestUrl, {
@@ -37,6 +41,7 @@ const getUserByLogin = async (login, token, setProfile) => {
     }
   } catch (error) {
 <<<<<<< HEAD
+<<<<<<< HEAD
     console.log(error);
 >>>>>>> 386e34e (header profile ok search screen)
 =======
@@ -45,6 +50,10 @@ const getUserByLogin = async (login, token, setProfile) => {
     }
     console.log('getUserByLogin', error);
 >>>>>>> 4e95064 (Renew request for 429, add anti spam, better loading)
+=======
+    console.log(error);
+>>>>>>> 31aa7f0 (header profile ok search screen)
+>>>>>>> ffaf808 (header profile ok search screen)
   }
 };
 
