@@ -1,5 +1,8 @@
 import { Tabs } from "expo-router";
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 386e34e (header profile ok search screen)
 import FontAwesome from "@expo/vector-icons/FontAwesome.js";
 
 const TabsLayout = () => {
@@ -28,6 +31,7 @@ const TabsLayout = () => {
             <FontAwesome name="user" size={24} color={color} />
           ),
           headerShown: false,
+<<<<<<< HEAD
 =======
             <View
               style={{
@@ -43,6 +47,8 @@ const TabsLayout = () => {
             </View>
           ),
 >>>>>>> 934d90e (Review views (Login/NavBar profile/Search))
+=======
+>>>>>>> 386e34e (header profile ok search screen)
         }}
       />
       <Tabs.Screen
@@ -55,6 +61,7 @@ const TabsLayout = () => {
             <FontAwesome name="search" size={24} color={color} />
           ),
           headerShown: false,
+<<<<<<< HEAD
 =======
             <View
               style={{
@@ -70,6 +77,8 @@ const TabsLayout = () => {
             </View>
           ),
 >>>>>>> 934d90e (Review views (Login/NavBar profile/Search))
+=======
+>>>>>>> 386e34e (header profile ok search screen)
         }}
       />
     </Tabs>

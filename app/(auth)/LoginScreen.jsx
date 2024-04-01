@@ -55,6 +55,7 @@ const LoginScreen = () => {
   return (
 <<<<<<< HEAD
     <View style={styles.root}>
+<<<<<<< HEAD
       <ImageBackground
         style={styles.background}
         source={require("../../assets/Background-cropped.jpg")}
@@ -69,6 +70,15 @@ const LoginScreen = () => {
         ) : (
           <ActivityIndicator size={"large"} />
         )}
+=======
+      <ImageBackground style={styles.background} source={require('../../assets/Background-cropped.jpg')}>
+        <TouchableOpacity
+          onPress={() => handlePress()}
+          style={styles.buttonLogin}
+        >
+          <Text style={styles.textLogin}>{`Log in with 42`}</Text>
+        </TouchableOpacity>
+>>>>>>> 386e34e (header profile ok search screen)
       </ImageBackground>
 =======
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
@@ -91,8 +101,13 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   background: {
+<<<<<<< HEAD
     height: "100%",
     width: "100%",
+=======
+    height: '100%',
+    width: '100%',
+>>>>>>> 386e34e (header profile ok search screen)
     alignItems: "center",
     justifyContent: "center",
   },

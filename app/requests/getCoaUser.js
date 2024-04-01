@@ -12,14 +12,22 @@ const getCoaUser = async (id, token, setCoa) => {
     });
     const data = await res.data[0].coalition_id;
     if (res.status === 200) {
+<<<<<<< HEAD
       await setCoa(selectBackground(data));
+=======
+        await setCoa(selectBackground(data));
+>>>>>>> 386e34e (header profile ok search screen)
     } else {
       console.log("error");
     }
   } catch (error) {
+<<<<<<< HEAD
     if (error.response?.status === 429) {
       getCoaUser(id, token, setCoa);
     } else console.log("getCoaUser", error.response.status);
+=======
+    console.log(error);
+>>>>>>> 386e34e (header profile ok search screen)
   }
 };
 

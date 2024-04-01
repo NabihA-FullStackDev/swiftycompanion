@@ -22,8 +22,12 @@ const getUrl = async (requestUrl, token, setter, params = {}) => {
 =======
     const data = await res.data;
     if (res.status === 200) {
+<<<<<<< HEAD
       console.log(data);
 >>>>>>> 934d90e (Review views (Login/NavBar profile/Search))
+=======
+      console.log(data);//TODO: delete
+>>>>>>> 386e34e (header profile ok search screen)
     } else {
 <<<<<<< HEAD
 >>>>>>> 934d90e (Review views (Login/NavBar profile/Search))

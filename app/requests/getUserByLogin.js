@@ -1,6 +1,10 @@
 import axios from "axios";
 
+<<<<<<< HEAD
 const getUserByLogin = async (login, token) => {
+=======
+const getUserByLogin = async (login, token, setProfile) => {
+>>>>>>> 386e34e (header profile ok search screen)
   const requestUrl = "v2/users";
   try {
     const res = await axios.get(requestUrl, {
@@ -16,6 +20,7 @@ const getUserByLogin = async (login, token) => {
     });
     const data = await res.data;
     if (res.status === 200) {
+<<<<<<< HEAD
       return data[0].id;
     } else {
       console.log(res.status);
@@ -25,6 +30,14 @@ const getUserByLogin = async (login, token) => {
       return getUserByLogin(login, token);
     }
     console.log('getUserByLogin', error);
+=======
+      setProfile(data);
+    } else {
+      console.log("error");
+    }
+  } catch (error) {
+    console.log(error);
+>>>>>>> 386e34e (header profile ok search screen)
   }
 };
 

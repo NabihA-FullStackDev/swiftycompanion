@@ -8,6 +8,10 @@ const getToken = async (code, setToken, setRefresh) => {
   const requestUrl = "/oauth/token";
 
   try {
+<<<<<<< HEAD
+=======
+    console.log(code);//TODO: delete
+>>>>>>> 386e34e (header profile ok search screen)
     const res = await axios.post(requestUrl, {
       grant_type: "authorization_code",
       client_id: CLIENT_ID,
@@ -16,6 +20,10 @@ const getToken = async (code, setToken, setRefresh) => {
       redirect_uri: urlRedirect,
     });
     if (res.status === 200) {
+<<<<<<< HEAD
+=======
+      console.log(res.data);//TODO: delete
+>>>>>>> 386e34e (header profile ok search screen)
       setToken(res.data.access_token);
       setRefresh(res.data.refresh_token);
     }

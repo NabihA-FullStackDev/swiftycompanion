@@ -10,9 +10,13 @@ export const getCode = async () => {
 
   try {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     console.log(urlRedirect);
 >>>>>>> 934d90e (Review views (Login/NavBar profile/Search))
+=======
+    console.log(urlRedirect);//TODO: delete
+>>>>>>> 386e34e (header profile ok search screen)
     const res = await WebBrowser.openAuthSessionAsync(requestUrl, urlRedirect, {
       ASWebAuthenticationSession: false,
     });
@@ -21,9 +25,13 @@ export const getCode = async () => {
     }
     const code = res.url.toString().split("code=")[1];
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     console.log(code);
 >>>>>>> 934d90e (Review views (Login/NavBar profile/Search))
+=======
+    console.log(code);//TODO: delete
+>>>>>>> 386e34e (header profile ok search screen)
     return code;
   } catch (error) {
     console.log(error);

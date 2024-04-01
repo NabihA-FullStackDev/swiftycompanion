@@ -13,10 +13,14 @@ const getUserProjects = async (user, token, params={}) => {
     const data = await res.data;
     if (res.status === 200) {
 <<<<<<< HEAD
+<<<<<<< HEAD
       return data;
 =======
       console.log(data);
 >>>>>>> 934d90e (Review views (Login/NavBar profile/Search))
+=======
+      console.log(data);//TODO: delete
+>>>>>>> 386e34e (header profile ok search screen)
     } else {
       console.log("error");
     }

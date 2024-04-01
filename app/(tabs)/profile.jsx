@@ -1,16 +1,29 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import {
   View,
+=======
+import {
+  View,
+  Text,
+  TouchableOpacity,
+>>>>>>> 386e34e (header profile ok search screen)
   ActivityIndicator,
   StyleSheet,
   ImageBackground,
 } from "react-native";
+<<<<<<< HEAD
 import React, { useEffect } from "react";
+=======
+import React, { useEffect, useState } from "react";
+import FontAwesome from "@expo/vector-icons/FontAwesome.js";
+>>>>>>> 386e34e (header profile ok search screen)
 
 import { useAuth } from "../../context/AuthProvider.jsx";
 import getMe from "../requests/getMe.js";
 import getCoaUser from "../requests/getCoaUser.js";
 import HeaderProfile from "../components/profile/HeaderProfile.jsx";
+<<<<<<< HEAD
 import SkillsBoard from "../components/profile/SkillsBoard.jsx";
 import ProjectsBoard from "../components/profile/ProjectsBoard.jsx";
 import refreshToken from "../requests/refreshToken.js";
@@ -27,6 +40,13 @@ const Profile = () => {
     coalition,
     setCoalition,
   } = useAuth();
+=======
+
+const Profile = () => {
+  const [profile, setProfile] = useState(null);
+  const [coalition, setCoalition] = useState('');
+  const { token, setToken } = useAuth();
+>>>>>>> 386e34e (header profile ok search screen)
 
   const handlePress = () => {
     setToken(null);
@@ -36,6 +56,7 @@ const Profile = () => {
 
   useEffect(() => {
     if (!profile && token) {
+<<<<<<< HEAD
       if (getTokenInfo(token) < 100)
         refreshToken(refresh, setToken, setRefresh);
       getMe(token, setProfile);
@@ -43,10 +64,16 @@ const Profile = () => {
     if (profile && token) {
       if (getTokenInfo(token) < 100)
         refreshToken(refresh, setToken, setRefresh);
+=======
+      getMe(token, setProfile);
+    }
+    if (profile && token) {
+>>>>>>> 386e34e (header profile ok search screen)
       getCoaUser(profile.id, token, setCoalition);
     }
   }, [profile]);
 
+<<<<<<< HEAD
   return (
     <View style={styles.root}>
       {profile && coalition ? (
@@ -69,16 +96,36 @@ const Profile = () => {
     <View>
       <Text>profile</Text>
 >>>>>>> 934d90e (Review views (Login/NavBar profile/Search))
+=======
+  return (
+    <View style={styles.root}>
+      <TouchableOpacity onPress={() => handlePress()} style={styles.logoff}>
+        <FontAwesome name="power-off" size={24} color="white" />
+      </TouchableOpacity>
+      {(profile && coalition) ? (
+        <>
+          <ImageBackground style={{ flex: 1 }} source={{uri: coalition}}>
+            <HeaderProfile user={profile} token={token} />
+          </ImageBackground>
+        </>
+      ) : (
+        <ActivityIndicator size={"large"} />
+      )}
+>>>>>>> 386e34e (header profile ok search screen)
     </View>
   );
 };
 
 export default Profile;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 386e34e (header profile ok search screen)
 
 const styles = StyleSheet.create({
   root: {
     flex: 1,
+<<<<<<< HEAD
   },
   background: {
     flex: 1,
@@ -89,3 +136,14 @@ const styles = StyleSheet.create({
 });
 =======
 >>>>>>> 934d90e (Review views (Login/NavBar profile/Search))
+=======
+    backgroundColor: "#D4D4D4",
+  },
+  logoff: {
+    position: "absolute",
+    top: 55,
+    right: 42,
+    zIndex: 999,
+  },
+});
+>>>>>>> 386e34e (header profile ok search screen)
