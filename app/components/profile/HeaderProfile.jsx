@@ -1,9 +1,13 @@
-import { useEffect, useState } from "react";
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
+import FontAwesome from "@expo/vector-icons/FontAwesome.js";
 
-const HeaderProfile = ({ user }) => {
+const HeaderProfile = ({ user, logoff }) => {
   return (
     <View style={styles.root}>
+      <TouchableOpacity onPress={() => logoff()} style={styles.logoff}>
+        <FontAwesome name="power-off" size={24} color="white" />
+      </TouchableOpacity>
+
       <Image style={styles.logo} source={{ uri: user.image.link }} />
       <View style={styles.info}>
         <Text style={styles.detail_login}>{user.login}</Text>
@@ -30,7 +34,6 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginHorizontal: 31,
     paddingLeft: 21,
-    top: 42,
   },
   logo: {
     width: 90,
@@ -55,5 +58,11 @@ const styles = StyleSheet.create({
     color: "black",
     alignSelf: "center",
     marginRight: 42,
+  },
+  logoff: {
+    position: "absolute",
+    top: 10,
+    right: 10,
+    zIndex: 999,
   },
 });
