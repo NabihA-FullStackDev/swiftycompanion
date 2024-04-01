@@ -1,7 +1,8 @@
 import axios from "axios";
+import selectBackground from "../utils/selectBackground";
 
-const getMe = async (token, setProfile) => {
-  const requestUrl = "v2/me";
+const getCoaUser = async (id, token, setCoa) => {
+  const requestUrl = "v2/users/" + id + "/coalitions_users";
   try {
     const res = await axios.get(requestUrl, {
       headers: {
@@ -9,9 +10,9 @@ const getMe = async (token, setProfile) => {
         Authorization: "Bearer " + token,
       },
     });
-    const data = await res.data;
+    const data = await res.data[0].coalition_id;
     if (res.status === 200) {
-      setProfile(data);
+        await setCoa(selectBackground(data));
     } else {
       console.log("error");
     }
@@ -20,4 +21,4 @@ const getMe = async (token, setProfile) => {
   }
 };
 
-export default getMe;
+export default getCoaUser;

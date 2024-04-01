@@ -12,7 +12,7 @@ const getUserProjects = async (user, token, params={}) => {
     });
     const data = await res.data;
     if (res.status === 200) {
-      console.log(data);
+      console.log(data);//TODO: delete
     } else {
       console.log("error");
     }

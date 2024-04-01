@@ -21,12 +21,12 @@ const LoginScreen = () => {
 
   return (
     <View style={styles.root}>
-      <ImageBackground style={styles.background} source={require('../../assets/Background.jpeg')}>
+      <ImageBackground style={styles.background} source={require('../../assets/Background-cropped.jpg')}>
         <TouchableOpacity
           onPress={() => handlePress()}
           style={styles.buttonLogin}
         >
-          <Text style={styles.textLogin}>{`Log with 42`}</Text>
+          <Text style={styles.textLogin}>{`Log in with 42`}</Text>
         </TouchableOpacity>
       </ImageBackground>
     </View>
@@ -41,6 +41,7 @@ const styles = StyleSheet.create({
   },
   background: {
     height: '100%',
+    width: '100%',
     alignItems: "center",
     justifyContent: "center",
   },
