@@ -1,45 +1,46 @@
 import {
   View,
-  Text,
   TouchableOpacity,
   ActivityIndicator,
   StyleSheet,
   ImageBackground,
   TextInput,
-  SafeAreaView,
 } from "react-native";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import FontAwesome from "@expo/vector-icons/FontAwesome.js";
 
 import { useAuth } from "../../context/AuthProvider.jsx";
-import getMe from "../requests/getMe.js";
-import getCoaUser from "../requests/getCoaUser.js";
-import HeaderProfile from "../components/profile/HeaderProfile.jsx";
 
 const Search = () => {
-  const [profile, setProfile] = useState(null);
-  const [coalition, setCoalition] = useState("");
-  const { token, setToken } = useAuth();
+  const [input, setInput] = useState("");
+  const { token, profile, coalition } = useAuth();
 
-  const handlePress = () => {
-    setToken(null);
+  const handlePress = async () => {
+    console.log(input);//TODO: lancer une recherche sur l'input
   };
-
-  useEffect(() => {
-    if (!profile && token) {
-      getMe(token, setProfile);
-    }
-    if (profile && token) {
-      getCoaUser(profile.id, token, setCoalition);
-    }
-  }, [profile]);
 
   return (
     <View style={styles.root}>
       {profile && coalition ? (
         <>
-          <ImageBackground style={styles.background} source={{ uri: coalition }}>
-              <TextInput style={styles.input} placeholder="Login" autoCapitalize="none" placeholderTextColor={'rgba(1,1,1, 1)'}/>
+          <ImageBackground
+            style={styles.background}
+            source={{ uri: coalition }}
+          >
+            <View style={styles.inputBox}>
+              <TextInput
+                style={styles.input}
+                value={input}
+                onChangeText={(e) => setInput(e)}
+                placeholder="Login"
+                autoCapitalize="none"
+                placeholderTextColor={"rgba(1,1,1, 1)"}
+                onSubmitEditing={handlePress}
+              />
+              <TouchableOpacity style={styles.inputBtn} onPress={handlePress}>
+                <FontAwesome name="search" />
+              </TouchableOpacity>
+            </View>
           </ImageBackground>
         </>
       ) : (
@@ -57,18 +58,27 @@ const styles = StyleSheet.create({
   },
   background: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  inputBox: {
+    width: "60%",
+    height: "5%",
+    flexDirection: "row",
+    alignItems: "center",
+    alignContent: "center",
+    justifyContent: "center",
+    borderRadius: 10,
+    backgroundColor: '"rgba(198, 198, 198, 0.5)"',
   },
   input: {
-    width: '60%',
-    height: '5%',
-    alignItems: 'center',
-    alignContent: 'center',
-    justifyContent: 'center',
-    backgroundColor: '"rgba(198, 198, 198, 0.5)"',
+    textAlign: "center",
+    zIndex: 998,
+    width: "90%",
+  },
+  inputBtn: {
+    textAlign: "center",
     zIndex: 999,
-    borderRadius: 5,
-    textAlign: 'center',
-  }
+    width: "10%",
+  },
 });

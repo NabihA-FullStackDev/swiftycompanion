@@ -15,9 +15,9 @@ import getCoaUser from "../requests/getCoaUser.js";
 import HeaderProfile from "../components/profile/HeaderProfile.jsx";
 
 const Profile = () => {
-  const [profile, setProfile] = useState(null);
-  const [coalition, setCoalition] = useState('');
-  const { token, setToken } = useAuth();
+  // const [profile, setProfile] = useState(null);
+  // const [coalition, setCoalition] = useState('');
+  const { token, setToken, profile, setProfile, coalition, setCoalition } = useAuth();
 
   const handlePress = () => {
     setToken(null);
