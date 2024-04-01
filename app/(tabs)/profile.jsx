@@ -1,26 +1,26 @@
 import {
   View,
-  Text,
-  TouchableOpacity,
   ActivityIndicator,
   StyleSheet,
   ImageBackground,
 } from "react-native";
-import React, { useEffect, useState } from "react";
-import FontAwesome from "@expo/vector-icons/FontAwesome.js";
+import React, { useEffect } from "react";
 
 import { useAuth } from "../../context/AuthProvider.jsx";
 import getMe from "../requests/getMe.js";
 import getCoaUser from "../requests/getCoaUser.js";
 import HeaderProfile from "../components/profile/HeaderProfile.jsx";
+import SkillsBoard from "../components/profile/SkillsBoard.jsx";
+import ProjectsBoard from "../components/profile/ProjectsBoard.jsx";
 
 const Profile = () => {
-  // const [profile, setProfile] = useState(null);
-  // const [coalition, setCoalition] = useState('');
-  const { token, setToken, profile, setProfile, coalition, setCoalition } = useAuth();
+  const { token, setToken, profile, setProfile, coalition, setCoalition } =
+    useAuth();
 
   const handlePress = () => {
     setToken(null);
+    setProfile(null);
+    setCoalition(null);
   };
 
   useEffect(() => {
@@ -34,15 +34,12 @@ const Profile = () => {
 
   return (
     <View style={styles.root}>
-      <TouchableOpacity onPress={() => handlePress()} style={styles.logoff}>
-        <FontAwesome name="power-off" size={24} color="white" />
-      </TouchableOpacity>
-      {(profile && coalition) ? (
-        <>
-          <ImageBackground style={{ flex: 1 }} source={{uri: coalition}}>
-            <HeaderProfile user={profile} token={token} />
+      {profile && coalition ? (
+          <ImageBackground style={styles.background} source={{ uri: coalition }}>
+            <HeaderProfile user={profile} logoff={handlePress}/>
+            <SkillsBoard/>
+            <ProjectsBoard/>
           </ImageBackground>
-        </>
       ) : (
         <ActivityIndicator size={"large"} />
       )}
@@ -57,10 +54,10 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#D4D4D4",
   },
-  logoff: {
-    position: "absolute",
-    top: 55,
-    right: 42,
-    zIndex: 999,
+  background: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'space-around',
+    paddingTop: 42,
   },
 });
