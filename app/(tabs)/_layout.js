@@ -1,8 +1,5 @@
 import { Tabs } from "expo-router";
-import { Image, Text, View } from "react-native";
 import FontAwesome from "@expo/vector-icons/FontAwesome.js";
-
-import icons from "../../constant/icons.js";
 
 const TabsLayout = () => {
   return (
@@ -21,6 +18,7 @@ const TabsLayout = () => {
           tabBarIcon: ({ color }) => (
             <FontAwesome name="user" size={24} color={color} />
           ),
+          headerShown: false,
         }}
       />
       <Tabs.Screen
@@ -31,6 +29,7 @@ const TabsLayout = () => {
           tabBarIcon: ({ color }) => (
             <FontAwesome name="search" size={24} color={color} />
           ),
+          headerShown: false,
         }}
       />
     </Tabs>

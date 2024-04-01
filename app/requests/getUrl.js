@@ -14,7 +14,7 @@ const getUrl = async (requestUrl, token, setter, params = {}) => {
 =======
     const data = await res.data;
     if (res.status === 200) {
-      console.log(data);
+      console.log(data);//TODO: delete
     } else {
 >>>>>>> 934d90e (Review views (Login/NavBar profile/Search))
       console.log("error");
