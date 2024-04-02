@@ -1,12 +1,23 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import FontAwesome from "@expo/vector-icons/FontAwesome.js";
+import { useRouter } from "expo-router";
 
-const HeaderProfile = ({ user, logoff }) => {
+const HeaderProfile = ({ user, logoff = null }) => {
+  const router = useRouter();
+  const handlePress = () => {
+    router.back();
+  };
   return (
     <View style={styles.root}>
-      <TouchableOpacity onPress={() => logoff()} style={styles.logoff}>
-        <FontAwesome name="power-off" size={24} color="white" />
-      </TouchableOpacity>
+      {logoff ? (
+        <TouchableOpacity onPress={() => logoff()} style={styles.logoff}>
+          <FontAwesome name="power-off" size={24} color="white" />
+        </TouchableOpacity>
+      ) : (
+        <TouchableOpacity style={styles.backArrow} onPress={handlePress}>
+          <FontAwesome name="chevron-left" size={24} color={"white"} />
+        </TouchableOpacity>
+      )}
 
       <Image style={styles.logo} source={{ uri: user.image.link }} />
       <View style={styles.info}>
@@ -61,8 +72,14 @@ const styles = StyleSheet.create({
   },
   logoff: {
     position: "absolute",
-    top: 10,
-    right: 10,
+    top: "5%",
+    right: "5%",
+    zIndex: 999,
+  },
+  backArrow: {
+    position: "absolute",
+    top: "5%",
+    left: "5%",
     zIndex: 999,
   },
 });
