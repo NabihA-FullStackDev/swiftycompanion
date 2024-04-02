@@ -38,13 +38,13 @@ const LoginScreen = () => {
 =======
 
 const LoginScreen = () => {
-  const { setToken } = useAuth();
+  const { setToken, setRefresh } = useAuth();
 
   const handlePress = async () => {
     try {
       const code = await getCode();
       if (code !== "") {
-        await getToken(code, setToken);
+        await getToken(code, setToken, setRefresh);
       }
     } catch (error) {
 >>>>>>> 934d90e (Review views (Login/NavBar profile/Search))

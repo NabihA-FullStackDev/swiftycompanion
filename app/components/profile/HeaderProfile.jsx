@@ -22,6 +22,7 @@ const HeaderProfile = ({ user, logoff = null }) => {
       )}
 
       <Image style={styles.logo} source={{ uri: user?.image?.link }} />
+<<<<<<< HEAD
       <View style={styles.info}>
         <Text style={styles.detail_login}>{user?.login}</Text>
         <Text style={styles.details} adjustsFontSizeToFit numberOfLines={1}>
@@ -38,15 +39,23 @@ const HeaderProfile = ({ user }) => {
   return (
     <View style={styles.root}>
       <Image style={styles.logo} source={{ uri: user.image.link }} />
+=======
+>>>>>>> 4e95064 (Renew request for 429, add anti spam, better loading)
       <View style={styles.info}>
-        <Text style={styles.detail_login}>{user.login}</Text>
+        <Text style={styles.detail_login}>{user?.login}</Text>
         <Text style={styles.details} adjustsFontSizeToFit numberOfLines={1}>
-          Email: {user.email}
+          Email: {user?.email}
         </Text>
+<<<<<<< HEAD
         <Text style={styles.details}>Tél: {user.phone}</Text>
         <Text style={styles.details}>Level: {user.cursus_users[2].level}</Text>
         <Text style={styles.details}>Wallet: {user.wallet} ₳</Text>
 >>>>>>> 386e34e (header profile ok search screen)
+=======
+        <Text style={styles.details}>Tél: {user?.phone}</Text>
+        <Text style={styles.details}>Level: {user?.cursus_users[2]?.level}</Text>
+        <Text style={styles.details}>Wallet: {user?.wallet} ₳</Text>
+>>>>>>> 4e95064 (Renew request for 429, add anti spam, better loading)
       </View>
     </View>
   );

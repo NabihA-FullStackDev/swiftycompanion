@@ -26,6 +26,7 @@ const getUserById = async (id, token, setProfile) => {
     }
   } catch (error) {
 <<<<<<< HEAD
+<<<<<<< HEAD
     if (error.response?.status === 429) {
       return getUserById(id, token);
     }
@@ -33,6 +34,12 @@ const getUserById = async (id, token, setProfile) => {
 =======
     console.log(error);
 >>>>>>> 386e34e (header profile ok search screen)
+=======
+    if (error.message.split(" ").slice(-1)[0] === "429") {
+      return getUserById(id, token);
+    }
+    console.log("getUserById", error);
+>>>>>>> 4e95064 (Renew request for 429, add anti spam, better loading)
   }
 };
 

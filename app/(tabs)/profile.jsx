@@ -79,6 +79,7 @@ const Profile = () => {
       {profile && coalition ? (
         <ImageBackground style={styles.background} source={{ uri: coalition }}>
           <HeaderProfile user={profile} logoff={handlePress} />
+<<<<<<< HEAD
           <SkillsBoard skills={profile.cursus_users[2].skills}/>
           <ProjectsBoard login={profile.login} cursus={profile?.cursus_users[2].cursus.id}/>
         </ImageBackground>
@@ -108,8 +109,15 @@ const Profile = () => {
             <HeaderProfile user={profile} token={token} />
           </ImageBackground>
         </>
+=======
+          <SkillsBoard />
+          <ProjectsBoard />
+        </ImageBackground>
+>>>>>>> 4e95064 (Renew request for 429, add anti spam, better loading)
       ) : (
-        <ActivityIndicator size={"large"} />
+        <View style={styles.background}>
+          <ActivityIndicator size={"large"} />
+        </View>
       )}
 >>>>>>> 386e34e (header profile ok search screen)
     </View>
@@ -126,6 +134,9 @@ const styles = StyleSheet.create({
   root: {
     flex: 1,
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4e95064 (Renew request for 429, add anti spam, better loading)
   },
   background: {
     flex: 1,

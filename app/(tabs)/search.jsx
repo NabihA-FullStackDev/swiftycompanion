@@ -13,6 +13,9 @@ import {
   ImageBackground,
   TextInput,
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4e95064 (Renew request for 429, add anti spam, better loading)
   Text,
 } from "react-native";
 import React, { useState } from "react";
@@ -28,7 +31,11 @@ const Search = () => {
   const [input, setInput] = useState("");
   const [spam, setSpam] = useState(false);
   const [loginError, setLoginError] = useState(false);
+<<<<<<< HEAD
   const { token, setToken, refresh, setRefresh, profile, coalition } = useAuth();
+=======
+  const { token, profile, coalition } = useAuth();
+>>>>>>> 4e95064 (Renew request for 429, add anti spam, better loading)
   const router = useRouter();
 
   const handlePress = async () => {
@@ -36,8 +43,11 @@ const Search = () => {
     if (input) {
       setSpam(true);
       setLoginError(false);
+<<<<<<< HEAD
       if (getTokenInfo(token) < 100)
         refreshToken(refresh, setToken, setRefresh);
+=======
+>>>>>>> 4e95064 (Renew request for 429, add anti spam, better loading)
       const id = await getUserByLogin(input.toLocaleLowerCase(), token);
       if (id) {
         router.push(`/components/search/${id}`);
@@ -84,6 +94,7 @@ const Search = () => {
                 Login: {input} n'existe pas
               </Text>
             )}
+<<<<<<< HEAD
           </ImageBackground>
         </>
       ) : (
@@ -135,10 +146,14 @@ const Search = () => {
         <>
           <ImageBackground style={styles.background} source={{ uri: coalition }}>
               <TextInput style={styles.input} placeholder="Login" autoCapitalize="none" placeholderTextColor={'rgba(1,1,1, 1)'}/>
+=======
+>>>>>>> 4e95064 (Renew request for 429, add anti spam, better loading)
           </ImageBackground>
         </>
       ) : (
-        <ActivityIndicator size={"large"} />
+        <View style={styles.background}>
+          <ActivityIndicator size={"large"} />
+        </View>
       )}
 >>>>>>> 386e34e (header profile ok search screen)
     </View>

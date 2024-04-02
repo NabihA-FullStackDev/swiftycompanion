@@ -11,12 +11,16 @@ export const getCode = async () => {
   try {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     console.log(urlRedirect);
 >>>>>>> 934d90e (Review views (Login/NavBar profile/Search))
 =======
     console.log(urlRedirect);//TODO: delete
 >>>>>>> 386e34e (header profile ok search screen)
+=======
+    console.log('Url for the redirection -->', urlRedirect);//TODO: delete
+>>>>>>> 4e95064 (Renew request for 429, add anti spam, better loading)
     const res = await WebBrowser.openAuthSessionAsync(requestUrl, urlRedirect, {
       ASWebAuthenticationSession: false,
     });
@@ -26,12 +30,16 @@ export const getCode = async () => {
     const code = res.url.toString().split("code=")[1];
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     console.log(code);
 >>>>>>> 934d90e (Review views (Login/NavBar profile/Search))
 =======
     console.log(code);//TODO: delete
 >>>>>>> 386e34e (header profile ok search screen)
+=======
+    console.log('Code -->', code);//TODO: delete
+>>>>>>> 4e95064 (Renew request for 429, add anti spam, better loading)
     return code;
   } catch (error) {
     console.log(error);

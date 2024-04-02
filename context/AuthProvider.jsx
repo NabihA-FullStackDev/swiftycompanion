@@ -33,6 +33,9 @@ function useProtectedRoute(token) {
 export const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(null);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4e95064 (Renew request for 429, add anti spam, better loading)
   const [refresh, setRefresh] = useState(null);
   const [profile, setProfile] = useState(null);
   const [coalition, setCoalition] = useState(null);
@@ -45,6 +48,9 @@ export const AuthProvider = ({ children }) => {
     token,
     setToken,
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4e95064 (Renew request for 429, add anti spam, better loading)
     refresh,
     setRefresh,
     profile,

@@ -9,9 +9,12 @@ const getToken = async (code, setToken, setRefresh) => {
 
   try {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     console.log(code);//TODO: delete
 >>>>>>> 386e34e (header profile ok search screen)
+=======
+>>>>>>> 4e95064 (Renew request for 429, add anti spam, better loading)
     const res = await axios.post(requestUrl, {
       grant_type: "authorization_code",
       client_id: CLIENT_ID,
@@ -21,13 +24,18 @@ const getToken = async (code, setToken, setRefresh) => {
     });
     if (res.status === 200) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
       console.log(res.data);//TODO: delete
 >>>>>>> 386e34e (header profile ok search screen)
+=======
+      console.log('token and refresh token -->', res.data.access_token, res.data.refresh_token);//TODO: delete
+>>>>>>> 4e95064 (Renew request for 429, add anti spam, better loading)
       setToken(res.data.access_token);
       setRefresh(res.data.refresh_token);
     }
   } catch (error) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     console.log('Catched error in getToken:');
@@ -35,6 +43,8 @@ const getToken = async (code, setToken, setRefresh) => {
 =======
 =======
 >>>>>>> 1c20ff0 (Correction request getMe)
+=======
+>>>>>>> 4e95064 (Renew request for 429, add anti spam, better loading)
     if (error.message.split(" ").slice(-1)[0] === "429") {
       getToken(code, setToken, setRefresh);
     }

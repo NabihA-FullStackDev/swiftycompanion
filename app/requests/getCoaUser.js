@@ -22,10 +22,16 @@ const getCoaUser = async (id, token, setCoa) => {
     }
   } catch (error) {
 <<<<<<< HEAD
+<<<<<<< HEAD
     if (error.response?.status === 429) {
       getCoaUser(id, token, setCoa);
     } else console.log("getCoaUser", error.response.status);
 =======
+=======
+    if (error.message.split(" ").slice(-1)[0] === "429") {
+      getCoaUser(id, token, setCoa);
+    }
+>>>>>>> 4e95064 (Renew request for 429, add anti spam, better loading)
     console.log(error);
 >>>>>>> 386e34e (header profile ok search screen)
   }
