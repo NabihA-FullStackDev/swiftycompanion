@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const getUserByLogin = async (login, token, setProfile) => {
+const getUserByLogin = async (login, token) => {
   const requestUrl = "v2/users";
   try {
     const res = await axios.get(requestUrl, {
@@ -16,7 +16,7 @@ const getUserByLogin = async (login, token, setProfile) => {
     });
     const data = await res.data;
     if (res.status === 200) {
-      setProfile(data);
+      return data[0].id;
     } else {
       console.log("error");
     }

@@ -6,19 +6,28 @@ import {
   ImageBackground,
   TextInput,
 } from "react-native";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import FontAwesome from "@expo/vector-icons/FontAwesome.js";
+import { useRouter } from "expo-router";
 
 import { useAuth } from "../../context/AuthProvider.jsx";
+import getUserByLogin from "../requests/getUserByLogin.js";
 
 const Search = () => {
   const [input, setInput] = useState("");
   const { token, profile, coalition } = useAuth();
+  const router = useRouter();
+
+  const getSearchInfo = async () => {};
 
   const handlePress = async () => {
-    console.log(input);//TODO: lancer une recherche sur l'input
+    if (input) {
+      const id = await getUserByLogin(input, token);
+      if (id) {
+        router.push(`/components/search/${id}`);
+      }
+    }
   };
-
   return (
     <View style={styles.root}>
       {profile && coalition ? (
@@ -31,7 +40,7 @@ const Search = () => {
               <TextInput
                 style={styles.input}
                 value={input}
-                onChangeText={(e) => setInput(e)}
+                onChangeText={(value) => setInput(value)}
                 placeholder="Login"
                 autoCapitalize="none"
                 placeholderTextColor={"rgba(1,1,1, 1)"}
