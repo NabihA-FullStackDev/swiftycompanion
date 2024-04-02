@@ -39,10 +39,15 @@ export const AuthProvider = ({ children }) => {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 4e95064 (Renew request for 429, add anti spam, better loading)
 =======
 >>>>>>> df16014 (Review views (Login/NavBar profile/Search))
+=======
+=======
+>>>>>>> 8539d30 (Renew request for 429, add anti spam, better loading)
+>>>>>>> 0fb997a (Renew request for 429, add anti spam, better loading)
   const [refresh, setRefresh] = useState(null);
   const [profile, setProfile] = useState(null);
   const [coalition, setCoalition] = useState(null);
@@ -61,10 +66,15 @@ export const AuthProvider = ({ children }) => {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 4e95064 (Renew request for 429, add anti spam, better loading)
 =======
 >>>>>>> df16014 (Review views (Login/NavBar profile/Search))
+=======
+=======
+>>>>>>> 8539d30 (Renew request for 429, add anti spam, better loading)
+>>>>>>> 0fb997a (Renew request for 429, add anti spam, better loading)
     refresh,
     setRefresh,
     profile,

@@ -28,21 +28,31 @@ const getCoaUser = async (id, token, setCoa) => {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> ffaf808 (header profile ok search screen)
+=======
+>>>>>>> 0fb997a (Renew request for 429, add anti spam, better loading)
     if (error.response?.status === 429) {
       getCoaUser(id, token, setCoa);
     } else console.log("getCoaUser", error.response.status);
 =======
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 0fb997a (Renew request for 429, add anti spam, better loading)
 =======
     if (error.message.split(" ").slice(-1)[0] === "429") {
       getCoaUser(id, token, setCoa);
     }
+<<<<<<< HEAD
 >>>>>>> 4e95064 (Renew request for 429, add anti spam, better loading)
     console.log(error);
 >>>>>>> 386e34e (header profile ok search screen)
 =======
+=======
+>>>>>>> 8539d30 (Renew request for 429, add anti spam, better loading)
+>>>>>>> 0fb997a (Renew request for 429, add anti spam, better loading)
     console.log(error);
 >>>>>>> 31aa7f0 (header profile ok search screen)
 >>>>>>> ffaf808 (header profile ok search screen)

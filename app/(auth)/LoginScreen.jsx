@@ -43,15 +43,20 @@ const LoginScreen = () => {
 
 const LoginScreen = () => {
 <<<<<<< HEAD
+<<<<<<< HEAD
   const { setToken, setRefresh } = useAuth();
 =======
   const { setToken } = useAuth();
 >>>>>>> df16014 (Review views (Login/NavBar profile/Search))
+=======
+  const { setToken, setRefresh } = useAuth();
+>>>>>>> 0fb997a (Renew request for 429, add anti spam, better loading)
 
   const handlePress = async () => {
     try {
       const code = await getCode();
       if (code !== "") {
+<<<<<<< HEAD
 <<<<<<< HEAD
         await getToken(code, setToken, setRefresh);
       }
@@ -59,6 +64,9 @@ const LoginScreen = () => {
 >>>>>>> 934d90e (Review views (Login/NavBar profile/Search))
 =======
         await getToken(code, setToken);
+=======
+        await getToken(code, setToken, setRefresh);
+>>>>>>> 0fb997a (Renew request for 429, add anti spam, better loading)
       }
     } catch (error) {
 >>>>>>> 2145d28 (Review views (Login/NavBar profile/Search))

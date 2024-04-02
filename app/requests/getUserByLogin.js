@@ -42,6 +42,7 @@ const getUserByLogin = async (login, token, setProfile) => {
   } catch (error) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     console.log(error);
 >>>>>>> 386e34e (header profile ok search screen)
 =======
@@ -54,6 +55,16 @@ const getUserByLogin = async (login, token, setProfile) => {
     console.log(error);
 >>>>>>> 31aa7f0 (header profile ok search screen)
 >>>>>>> ffaf808 (header profile ok search screen)
+=======
+    console.log(error);
+>>>>>>> 31aa7f0 (header profile ok search screen)
+=======
+    if (error.message.split(" ").slice(-1)[0] === "429") {
+      return getUserByLogin(login, token);
+    }
+    console.log('getUserByLogin', error);
+>>>>>>> 8539d30 (Renew request for 429, add anti spam, better loading)
+>>>>>>> 0fb997a (Renew request for 429, add anti spam, better loading)
   }
 };
 

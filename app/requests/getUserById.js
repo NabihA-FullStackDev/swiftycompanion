@@ -36,8 +36,11 @@ const getUserById = async (id, token, setProfile) => {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> ffaf808 (header profile ok search screen)
+=======
+>>>>>>> 0fb997a (Renew request for 429, add anti spam, better loading)
     if (error.response?.status === 429) {
       return getUserById(id, token);
     }
@@ -54,7 +57,16 @@ const getUserById = async (id, token, setProfile) => {
 >>>>>>> 4e95064 (Renew request for 429, add anti spam, better loading)
 =======
 >>>>>>> 31aa7f0 (header profile ok search screen)
+<<<<<<< HEAD
 >>>>>>> ffaf808 (header profile ok search screen)
+=======
+=======
+    if (error.message.split(" ").slice(-1)[0] === "429") {
+      return getUserById(id, token);
+    }
+    console.log("getUserById", error);
+>>>>>>> 8539d30 (Renew request for 429, add anti spam, better loading)
+>>>>>>> 0fb997a (Renew request for 429, add anti spam, better loading)
   }
 };
 

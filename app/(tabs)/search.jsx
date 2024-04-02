@@ -25,10 +25,15 @@ import {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 4e95064 (Renew request for 429, add anti spam, better loading)
 =======
 >>>>>>> ffaf808 (header profile ok search screen)
+=======
+=======
+>>>>>>> 8539d30 (Renew request for 429, add anti spam, better loading)
+>>>>>>> 0fb997a (Renew request for 429, add anti spam, better loading)
   Text,
 } from "react-native";
 import React, { useState } from "react";
@@ -48,7 +53,11 @@ const Search = () => {
   const { token, setToken, refresh, setRefresh, profile, coalition } = useAuth();
 =======
   const { token, profile, coalition } = useAuth();
+<<<<<<< HEAD
 >>>>>>> 4e95064 (Renew request for 429, add anti spam, better loading)
+=======
+>>>>>>> 8539d30 (Renew request for 429, add anti spam, better loading)
+>>>>>>> 0fb997a (Renew request for 429, add anti spam, better loading)
   const router = useRouter();
 
   const handlePress = async () => {
@@ -60,7 +69,11 @@ const Search = () => {
       if (getTokenInfo(token) < 100)
         refreshToken(refresh, setToken, setRefresh);
 =======
+<<<<<<< HEAD
 >>>>>>> 4e95064 (Renew request for 429, add anti spam, better loading)
+=======
+>>>>>>> 8539d30 (Renew request for 429, add anti spam, better loading)
+>>>>>>> 0fb997a (Renew request for 429, add anti spam, better loading)
       const id = await getUserByLogin(input.toLocaleLowerCase(), token);
       if (id) {
         router.push(`/components/search/${id}`);
@@ -211,10 +224,14 @@ const Search = () => {
         <>
           <ImageBackground style={styles.background} source={{ uri: coalition }}>
               <TextInput style={styles.input} placeholder="Login" autoCapitalize="none" placeholderTextColor={'rgba(1,1,1, 1)'}/>
+=======
+>>>>>>> 8539d30 (Renew request for 429, add anti spam, better loading)
           </ImageBackground>
         </>
       ) : (
-        <ActivityIndicator size={"large"} />
+        <View style={styles.background}>
+          <ActivityIndicator size={"large"} />
+        </View>
       )}
 >>>>>>> 31aa7f0 (header profile ok search screen)
 >>>>>>> ffaf808 (header profile ok search screen)

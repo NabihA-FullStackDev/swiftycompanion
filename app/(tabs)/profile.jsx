@@ -160,8 +160,15 @@ const Profile = () => {
             <HeaderProfile user={profile} token={token} />
           </ImageBackground>
         </>
+=======
+          <SkillsBoard />
+          <ProjectsBoard />
+        </ImageBackground>
+>>>>>>> 8539d30 (Renew request for 429, add anti spam, better loading)
       ) : (
-        <ActivityIndicator size={"large"} />
+        <View style={styles.background}>
+          <ActivityIndicator size={"large"} />
+        </View>
       )}
 >>>>>>> 31aa7f0 (header profile ok search screen)
 >>>>>>> ffaf808 (header profile ok search screen)
@@ -189,10 +196,15 @@ const styles = StyleSheet.create({
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 4e95064 (Renew request for 429, add anti spam, better loading)
 =======
 >>>>>>> ffaf808 (header profile ok search screen)
+=======
+=======
+>>>>>>> 8539d30 (Renew request for 429, add anti spam, better loading)
+>>>>>>> 0fb997a (Renew request for 429, add anti spam, better loading)
   },
   background: {
     flex: 1,
