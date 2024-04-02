@@ -17,6 +17,9 @@ const getCoaUser = async (id, token, setCoa) => {
       console.log("error");
     }
   } catch (error) {
+    if (error.message.split(" ").slice(-1)[0] === "429") {
+      getCoaUser(id, token, setCoa);
+    }
     console.log(error);
   }
 };

@@ -5,8 +5,9 @@ import {
   StyleSheet,
   ImageBackground,
   TextInput,
+  Text,
 } from "react-native";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import FontAwesome from "@expo/vector-icons/FontAwesome.js";
 import { useRouter } from "expo-router";
 
@@ -15,6 +16,8 @@ import getUserByLogin from "../requests/getUserByLogin.js";
 
 const Search = () => {
   const [input, setInput] = useState("");
+  const [spam, setSpam] = useState(false);
+  const [loginError, setLoginError] = useState(false);
   const { token, profile, coalition } = useAuth();
   const router = useRouter();
 
@@ -22,10 +25,15 @@ const Search = () => {
 
   const handlePress = async () => {
     if (input) {
-      const id = await getUserByLogin(input, token);
+      setSpam(true);
+      setLoginError(false);
+      const id = await getUserByLogin(input.toLocaleLowerCase(), token);
       if (id) {
         router.push(`/components/search/${id}`);
+      } else {
+        setLoginError(true);
       }
+      setSpam(false);
     }
   };
   return (
@@ -37,23 +45,40 @@ const Search = () => {
             source={{ uri: coalition }}
           >
             <View style={styles.inputBox}>
-              <TextInput
-                style={styles.input}
-                value={input}
-                onChangeText={(value) => setInput(value)}
-                placeholder="Login"
-                autoCapitalize="none"
-                placeholderTextColor={"rgba(1,1,1, 1)"}
-                onSubmitEditing={handlePress}
-              />
-              <TouchableOpacity style={styles.inputBtn} onPress={handlePress}>
-                <FontAwesome name="search" />
-              </TouchableOpacity>
+              {!spam ? (
+                <>
+                  <TextInput
+                    style={styles.input}
+                    value={input}
+                    onChangeText={(value) => setInput(value)}
+                    placeholder="Login"
+                    autoCapitalize="none"
+                    placeholderTextColor={"rgba(84,84,84, 1)"}
+                    onSubmitEditing={handlePress}
+                  />
+                  <TouchableOpacity
+                    disabled={spam}
+                    style={styles.inputBtn}
+                    onPress={handlePress}
+                  >
+                    <FontAwesome name="search" />
+                  </TouchableOpacity>
+                </>
+              ) : (
+                <ActivityIndicator size={"large"} />
+              )}
             </View>
+            {loginError && (
+              <Text style={styles.errorMessage}>
+                Login: {input} n'existe pas
+              </Text>
+            )}
           </ImageBackground>
         </>
       ) : (
-        <ActivityIndicator size={"large"} />
+        <View style={styles.background}>
+          <ActivityIndicator size={"large"} />
+        </View>
       )}
     </View>
   );
@@ -84,10 +109,15 @@ const styles = StyleSheet.create({
     textAlign: "center",
     zIndex: 998,
     width: "90%",
+    height: "100%",
   },
   inputBtn: {
     textAlign: "center",
+    alignItems: "center",
     zIndex: 999,
     width: "10%",
+  },
+  errorMessage: {
+    color: "red",
   },
 });

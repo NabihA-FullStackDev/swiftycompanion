@@ -1,13 +1,11 @@
 import {
   View,
-  Text,
-  TouchableOpacity,
   StyleSheet,
   ImageBackground,
+  ActivityIndicator,
 } from "react-native";
 import React, { useEffect, useState } from "react";
 import { useRouter, useLocalSearchParams } from "expo-router";
-import FontAwesome from "@expo/vector-icons/FontAwesome.js";
 import HeaderProfile from "../profile/HeaderProfile";
 import { useAuth } from "../../../context/AuthProvider";
 import getUserById from "../../requests/getUserById";
@@ -17,7 +15,7 @@ import ProjectsBoard from "../profile/ProjectsBoard";
 
 const UserSearched = () => {
   const [user, setUser] = useState(null);
-  // const [coa, setCoa] = useState(null);
+  const [coa, setCoa] = useState(null);
   const params = useLocalSearchParams();
   const router = useRouter();
   const { token } = useAuth();
@@ -25,6 +23,9 @@ const UserSearched = () => {
   useEffect(() => {
     const setUserInfo = async () => {
       const search = await getUserById(params.id, token);
+      if (search) {
+        await getCoaUser(search.id, token, setCoa);
+      }
       setUser(search);
       if (!search) {
         router.back();
@@ -35,12 +36,16 @@ const UserSearched = () => {
 
   return (
     <View style={styles.root}>
-      {user && (
-        <ImageBackground style={styles.background}>
+      {user && coa ? (
+        <ImageBackground style={styles.background} source={{ uri: coa }}>
           <HeaderProfile user={user} />
           <SkillsBoard />
           <ProjectsBoard />
         </ImageBackground>
+      ) : (
+        <View style={styles.background}>
+          <ActivityIndicator size={'large'}/>
+        </View>
       )}
     </View>
   );
@@ -51,7 +56,6 @@ export default UserSearched;
 const styles = StyleSheet.create({
   root: {
     flex: 1,
-    backgroundColor: "#D4D4D4",
   },
   background: {
     flex: 1,

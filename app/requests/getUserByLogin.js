@@ -21,7 +21,10 @@ const getUserByLogin = async (login, token) => {
       console.log("error");
     }
   } catch (error) {
-    console.log(error);
+    if (error.message.split(" ").slice(-1)[0] === "429") {
+      return getUserByLogin(login, token);
+    }
+    console.log('getUserByLogin', error);
   }
 };
 
