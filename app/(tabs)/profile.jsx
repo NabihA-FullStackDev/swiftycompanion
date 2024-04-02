@@ -35,13 +35,15 @@ const Profile = () => {
   return (
     <View style={styles.root}>
       {profile && coalition ? (
-          <ImageBackground style={styles.background} source={{ uri: coalition }}>
-            <HeaderProfile user={profile} logoff={handlePress}/>
-            <SkillsBoard/>
-            <ProjectsBoard/>
-          </ImageBackground>
+        <ImageBackground style={styles.background} source={{ uri: coalition }}>
+          <HeaderProfile user={profile} logoff={handlePress} />
+          <SkillsBoard />
+          <ProjectsBoard />
+        </ImageBackground>
       ) : (
-        <ActivityIndicator size={"large"} />
+        <View style={styles.background}>
+          <ActivityIndicator size={"large"} />
+        </View>
       )}
     </View>
   );
@@ -52,12 +54,11 @@ export default Profile;
 const styles = StyleSheet.create({
   root: {
     flex: 1,
-    backgroundColor: "#D4D4D4",
   },
   background: {
     flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'space-around',
+    flexDirection: "column",
+    justifyContent: "space-around",
     paddingTop: 42,
   },
 });

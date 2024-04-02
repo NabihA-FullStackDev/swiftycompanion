@@ -19,15 +19,15 @@ const HeaderProfile = ({ user, logoff = null }) => {
         </TouchableOpacity>
       )}
 
-      <Image style={styles.logo} source={{ uri: user.image.link }} />
+      <Image style={styles.logo} source={{ uri: user?.image?.link }} />
       <View style={styles.info}>
-        <Text style={styles.detail_login}>{user.login}</Text>
+        <Text style={styles.detail_login}>{user?.login}</Text>
         <Text style={styles.details} adjustsFontSizeToFit numberOfLines={1}>
-          Email: {user.email}
+          Email: {user?.email}
         </Text>
-        <Text style={styles.details}>Tél: {user.phone}</Text>
-        <Text style={styles.details}>Level: {user.cursus_users[2].level}</Text>
-        <Text style={styles.details}>Wallet: {user.wallet} ₳</Text>
+        <Text style={styles.details}>Tél: {user?.phone}</Text>
+        <Text style={styles.details}>Level: {user?.cursus_users[2]?.level}</Text>
+        <Text style={styles.details}>Wallet: {user?.wallet} ₳</Text>
       </View>
     </View>
   );

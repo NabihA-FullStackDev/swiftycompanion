@@ -6,13 +6,13 @@ import { useAuth } from "../../context/AuthProvider.jsx";
 import getToken from "../requests/getToken.js";
 
 const LoginScreen = () => {
-  const { setToken } = useAuth();
+  const { setToken, setRefresh } = useAuth();
 
   const handlePress = async () => {
     try {
       const code = await getCode();
       if (code !== "") {
-        await getToken(code, setToken);
+        await getToken(code, setToken, setRefresh);
       }
     } catch (error) {
       console.log(error);
@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "rgba(217, 217, 217, 0.45098039507865906)",
+    backgroundColor: "rgba(217, 217, 217, 0.5)",
   },
   textLogin: {
     width: 190,

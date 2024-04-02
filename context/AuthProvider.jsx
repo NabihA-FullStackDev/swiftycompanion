@@ -28,6 +28,7 @@ function useProtectedRoute(token) {
 
 export const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(null);
+  const [refresh, setRefresh] = useState(null);
   const [profile, setProfile] = useState(null);
   const [coalition, setCoalition] = useState(null);
 
@@ -36,6 +37,8 @@ export const AuthProvider = ({ children }) => {
   const authContext = {
     token,
     setToken,
+    refresh,
+    setRefresh,
     profile,
     setProfile,
     coalition,

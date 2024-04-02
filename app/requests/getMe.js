@@ -16,6 +16,10 @@ const getMe = async (token, setProfile) => {
       console.log("error");
     }
   } catch (error) {
+    if (error.message.split(" ").slice(-1)[0] === "429") {
+      console.log('Enter the loop')
+      getMe(token, setProfile);
+    }
     console.log(error);
   }
 };
