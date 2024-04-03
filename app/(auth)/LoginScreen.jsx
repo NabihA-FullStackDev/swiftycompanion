@@ -4,6 +4,7 @@ import {
   TouchableOpacity,
   ImageBackground,
   ActivityIndicator,
+  Platform,
 } from "react-native";
 import { StyleSheet } from "react-native";
 
@@ -11,6 +12,7 @@ import { getCode } from "../requests/getCode.js";
 import { useAuth } from "../../context/AuthProvider.jsx";
 import getToken from "../requests/getToken.js";
 import { useState } from "react";
+import { router } from "expo-router";
 
 const LoginScreen = () => {
   const [spam, setSpam] = useState(false);
@@ -22,6 +24,8 @@ const LoginScreen = () => {
       const code = await getCode();
       if (code !== "") {
         await getToken(code, setToken, setRefresh);
+        if (Platform.OS === 'android')
+          router.back();
         setSpam(false);
       }
     } catch (error) {
