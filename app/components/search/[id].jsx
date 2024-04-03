@@ -12,16 +12,20 @@ import getUserById from "../../requests/getUserById";
 import getCoaUser from "../../requests/getCoaUser";
 import SkillsBoard from "../profile/SkillsBoard";
 import ProjectsBoard from "../profile/ProjectsBoard";
+import getTokenInfo from "../../requests/getTokenInfo";
+import refreshToken from "../../requests/refreshToken";
 
 const UserSearched = () => {
   const [user, setUser] = useState(null);
   const [coa, setCoa] = useState(null);
   const params = useLocalSearchParams();
   const router = useRouter();
-  const { token } = useAuth();
+  const { token, setToken, refresh, setRefresh } = useAuth();
 
   useEffect(() => {
     const setUserInfo = async () => {
+      if (getTokenInfo(token) < 100)
+        refreshToken(refresh, setToken, setRefresh);
       const search = await getUserById(params.id, token);
       if (search) {
         await getCoaUser(search.id, token, setCoa);
@@ -39,8 +43,8 @@ const UserSearched = () => {
       {user && coa ? (
         <ImageBackground style={styles.background} source={{ uri: coa }}>
           <HeaderProfile user={user} />
-          <SkillsBoard />
-          <ProjectsBoard />
+          <SkillsBoard skills={user?.cursus_users[2]?.skills}/>
+          <ProjectsBoard login={user?.login} cursus={user?.cursus_users[2]?.cursus?.id}/>
         </ImageBackground>
       ) : (
         <View style={styles.background}>

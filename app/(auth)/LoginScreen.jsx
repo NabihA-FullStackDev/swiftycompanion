@@ -1,33 +1,51 @@
-import { View, Text, TouchableOpacity, ImageBackground } from "react-native";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  ImageBackground,
+  ActivityIndicator,
+} from "react-native";
 import { StyleSheet } from "react-native";
 
 import { getCode } from "../requests/getCode.js";
 import { useAuth } from "../../context/AuthProvider.jsx";
 import getToken from "../requests/getToken.js";
+import { useState } from "react";
 
 const LoginScreen = () => {
+  const [spam, setSpam] = useState(false);
   const { setToken, setRefresh } = useAuth();
 
   const handlePress = async () => {
+    setSpam(true);
     try {
       const code = await getCode();
       if (code !== "") {
         await getToken(code, setToken, setRefresh);
+        setSpam(false);
       }
     } catch (error) {
+      setSpam(false);
       console.log(error);
     }
   };
 
   return (
     <View style={styles.root}>
-      <ImageBackground style={styles.background} source={require('../../assets/Background-cropped.jpg')}>
-        <TouchableOpacity
-          onPress={() => handlePress()}
-          style={styles.buttonLogin}
-        >
-          <Text style={styles.textLogin}>{`Log in with 42`}</Text>
-        </TouchableOpacity>
+      <ImageBackground
+        style={styles.background}
+        source={require("../../assets/Background-cropped.jpg")}
+      >
+        {!spam ? (
+          <TouchableOpacity
+            onPress={() => handlePress()}
+            style={styles.buttonLogin}
+          >
+            <Text style={styles.textLogin}>{`Log in with 42`}</Text>
+          </TouchableOpacity>
+        ) : (
+          <ActivityIndicator size={"large"} />
+        )}
       </ImageBackground>
     </View>
   );
@@ -40,8 +58,8 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   background: {
-    height: '100%',
-    width: '100%',
+    height: "100%",
+    width: "100%",
     alignItems: "center",
     justifyContent: "center",
   },

@@ -16,7 +16,7 @@ const getUserById = async (id, token) => {
       console.log("error");
     }
   } catch (error) {
-    if (error.message.split(" ").slice(-1)[0] === "429") {
+    if (error.response?.status === 429) {
       return getUserById(id, token);
     }
     console.log("getUserById", error);

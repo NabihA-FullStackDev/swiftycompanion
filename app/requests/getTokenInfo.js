@@ -1,18 +1,16 @@
 import axios from "axios";
 
-const getUserProjects = async (user, token, params={}) => {
-    const requestUrl = '/v2/users/' + user + '/projects_users'
+const getTokenInfo = async (token) => {
   try {
-    const res = await axios.get(requestUrl, {
+    const res = await axios.get('https://api.intra.42.fr/oauth/token/info', {
       headers: {
         "Content-Type": "application/vnd.api+json",
         Authorization: 'Bearer ' + token,
       },
-      ...params,
     });
     const data = await res.data;
-    if (res.status === 200) {
-      return data;
+    if (res?.status === 200) {
+      return (data?.expires_in_seconds);//TODO: delete
     } else {
       console.log("error");
     }
@@ -21,4 +19,4 @@ const getUserProjects = async (user, token, params={}) => {
   }
 };
 
-export default getUserProjects;
+export default getTokenInfo;

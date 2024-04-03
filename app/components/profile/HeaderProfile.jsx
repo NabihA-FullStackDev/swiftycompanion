@@ -7,6 +7,7 @@ const HeaderProfile = ({ user, logoff = null }) => {
   const handlePress = () => {
     router.back();
   };
+
   return (
     <View style={styles.root}>
       {logoff ? (

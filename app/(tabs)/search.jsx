@@ -13,20 +13,23 @@ import { useRouter } from "expo-router";
 
 import { useAuth } from "../../context/AuthProvider.jsx";
 import getUserByLogin from "../requests/getUserByLogin.js";
+import getTokenInfo from "../requests/getTokenInfo.js";
+import refreshToken from "../requests/refreshToken.js";
 
 const Search = () => {
   const [input, setInput] = useState("");
   const [spam, setSpam] = useState(false);
   const [loginError, setLoginError] = useState(false);
-  const { token, profile, coalition } = useAuth();
+  const { token, setToken, refresh, setRefresh, profile, coalition } = useAuth();
   const router = useRouter();
 
-  const getSearchInfo = async () => {};
-
   const handlePress = async () => {
+    getTokenInfo(token);
     if (input) {
       setSpam(true);
       setLoginError(false);
+      if (getTokenInfo(token) < 100)
+        refreshToken(refresh, setToken, setRefresh);
       const id = await getUserByLogin(input.toLocaleLowerCase(), token);
       if (id) {
         router.push(`/components/search/${id}`);
