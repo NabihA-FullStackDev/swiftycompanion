@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import FontAwesome from "@expo/vector-icons/FontAwesome.js";
 import { useRouter } from "expo-router";
@@ -22,7 +21,6 @@ const HeaderProfile = ({ user, logoff = null }) => {
       )}
 
       <Image style={styles.logo} source={{ uri: user?.image?.link }} />
-<<<<<<< HEAD
       <View style={styles.info}>
         <Text style={styles.detail_login}>{user?.login}</Text>
         <Text style={styles.details} adjustsFontSizeToFit numberOfLines={1}>
@@ -31,57 +29,6 @@ const HeaderProfile = ({ user, logoff = null }) => {
         <Text style={styles.details}>Tél: {user?.phone}</Text>
         <Text style={styles.details}>Level: {user?.cursus_users[2]?.level}</Text>
         <Text style={styles.details}>Wallet: {user?.wallet} ₳</Text>
-=======
-import { useEffect, useState } from "react";
-import { StyleSheet, Text, View, Image } from "react-native";
-
-const HeaderProfile = ({ user }) => {
-  return (
-    <View style={styles.root}>
-      <Image style={styles.logo} source={{ uri: user.image.link }} />
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 4e95064 (Renew request for 429, add anti spam, better loading)
-      <View style={styles.info}>
-        <Text style={styles.detail_login}>{user?.login}</Text>
-        <Text style={styles.details} adjustsFontSizeToFit numberOfLines={1}>
-          Email: {user?.email}
-        </Text>
-<<<<<<< HEAD
-        <Text style={styles.details}>Tél: {user.phone}</Text>
-        <Text style={styles.details}>Level: {user.cursus_users[2].level}</Text>
-        <Text style={styles.details}>Wallet: {user.wallet} ₳</Text>
->>>>>>> 386e34e (header profile ok search screen)
-=======
-        <Text style={styles.details}>Tél: {user?.phone}</Text>
-        <Text style={styles.details}>Level: {user?.cursus_users[2]?.level}</Text>
-        <Text style={styles.details}>Wallet: {user?.wallet} ₳</Text>
->>>>>>> 4e95064 (Renew request for 429, add anti spam, better loading)
-=======
-=======
-=======
->>>>>>> 8539d30 (Renew request for 429, add anti spam, better loading)
->>>>>>> 0fb997a (Renew request for 429, add anti spam, better loading)
-      <View style={styles.info}>
-        <Text style={styles.detail_login}>{user?.login}</Text>
-        <Text style={styles.details} adjustsFontSizeToFit numberOfLines={1}>
-          Email: {user?.email}
-        </Text>
-<<<<<<< HEAD
-        <Text style={styles.details}>Tél: {user.phone}</Text>
-        <Text style={styles.details}>Level: {user.cursus_users[2].level}</Text>
-        <Text style={styles.details}>Wallet: {user.wallet} ₳</Text>
->>>>>>> 31aa7f0 (header profile ok search screen)
-<<<<<<< HEAD
->>>>>>> ffaf808 (header profile ok search screen)
-=======
-=======
-        <Text style={styles.details}>Tél: {user?.phone}</Text>
-        <Text style={styles.details}>Level: {user?.cursus_users[2]?.level}</Text>
-        <Text style={styles.details}>Wallet: {user?.wallet} ₳</Text>
->>>>>>> 8539d30 (Renew request for 429, add anti spam, better loading)
->>>>>>> 0fb997a (Renew request for 429, add anti spam, better loading)
       </View>
     </View>
   );
@@ -99,14 +46,6 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginHorizontal: 31,
     paddingLeft: 21,
-<<<<<<< HEAD
-=======
-    top: 42,
-<<<<<<< HEAD
->>>>>>> 386e34e (header profile ok search screen)
-=======
->>>>>>> 31aa7f0 (header profile ok search screen)
->>>>>>> ffaf808 (header profile ok search screen)
   },
   logo: {
     width: 90,
@@ -132,7 +71,6 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     marginRight: 42,
   },
-<<<<<<< HEAD
   logoff: {
     position: "absolute",
     top: "5%",
@@ -145,10 +83,4 @@ const styles = StyleSheet.create({
     left: "5%",
     zIndex: 999,
   },
-=======
-<<<<<<< HEAD
->>>>>>> 386e34e (header profile ok search screen)
-=======
->>>>>>> 31aa7f0 (header profile ok search screen)
->>>>>>> ffaf808 (header profile ok search screen)
 });

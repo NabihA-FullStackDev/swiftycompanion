@@ -9,42 +9,6 @@ export const getCode = async () => {
   const requestUrl = `https://api.intra.42.fr/oauth/authorize?client_id=${CLIENT_ID}&redirect_uri=${urlRedirect}&response_type=code&scope=public`;
 
   try {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-    console.log(urlRedirect);
->>>>>>> 934d90e (Review views (Login/NavBar profile/Search))
-=======
-    console.log(urlRedirect);//TODO: delete
->>>>>>> 386e34e (header profile ok search screen)
-=======
-    console.log('Url for the redirection -->', urlRedirect);//TODO: delete
->>>>>>> 4e95064 (Renew request for 429, add anti spam, better loading)
-=======
-=======
-    console.log(urlRedirect);
->>>>>>> 2145d28 (Review views (Login/NavBar profile/Search))
->>>>>>> df16014 (Review views (Login/NavBar profile/Search))
-=======
-=======
->>>>>>> 0fb997a (Renew request for 429, add anti spam, better loading)
-=======
-    console.log(urlRedirect);
->>>>>>> 2145d28 (Review views (Login/NavBar profile/Search))
-=======
-    console.log(urlRedirect);//TODO: delete
->>>>>>> 31aa7f0 (header profile ok search screen)
-<<<<<<< HEAD
->>>>>>> ffaf808 (header profile ok search screen)
-=======
-=======
-    console.log('Url for the redirection -->', urlRedirect);//TODO: delete
->>>>>>> 8539d30 (Renew request for 429, add anti spam, better loading)
->>>>>>> 0fb997a (Renew request for 429, add anti spam, better loading)
     const res = await WebBrowser.openAuthSessionAsync(requestUrl, urlRedirect, {
       ASWebAuthenticationSession: false,
     });
@@ -52,42 +16,6 @@ export const getCode = async () => {
       throw new Error("Login failed");
     }
     const code = res.url.toString().split("code=")[1];
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-    console.log(code);
->>>>>>> 934d90e (Review views (Login/NavBar profile/Search))
-=======
-    console.log(code);//TODO: delete
->>>>>>> 386e34e (header profile ok search screen)
-=======
-    console.log('Code -->', code);//TODO: delete
->>>>>>> 4e95064 (Renew request for 429, add anti spam, better loading)
-=======
-=======
-    console.log(code);
->>>>>>> 2145d28 (Review views (Login/NavBar profile/Search))
->>>>>>> df16014 (Review views (Login/NavBar profile/Search))
-=======
-=======
->>>>>>> 0fb997a (Renew request for 429, add anti spam, better loading)
-=======
-    console.log(code);
->>>>>>> 2145d28 (Review views (Login/NavBar profile/Search))
-=======
-    console.log(code);//TODO: delete
->>>>>>> 31aa7f0 (header profile ok search screen)
-<<<<<<< HEAD
->>>>>>> ffaf808 (header profile ok search screen)
-=======
-=======
-    console.log('Code -->', code);//TODO: delete
->>>>>>> 8539d30 (Renew request for 429, add anti spam, better loading)
->>>>>>> 0fb997a (Renew request for 429, add anti spam, better loading)
     return code;
   } catch (error) {
     console.log(error);
