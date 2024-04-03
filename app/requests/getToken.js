@@ -16,7 +16,6 @@ const getToken = async (code, setToken, setRefresh) => {
       redirect_uri: urlRedirect,
     });
     if (res.status === 200) {
-      console.log('token and refresh token -->', res.data.access_token, res.data.refresh_token);//TODO: delete
       setToken(res.data.access_token);
       setRefresh(res.data.refresh_token);
     }
