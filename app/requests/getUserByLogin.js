@@ -18,10 +18,10 @@ const getUserByLogin = async (login, token) => {
     if (res.status === 200) {
       return data[0].id;
     } else {
-      console.log("error");
+      console.log(res.status);
     }
   } catch (error) {
-    if (error.message.split(" ").slice(-1)[0] === "429") {
+    if (error.response?.status === 429) {
       return getUserByLogin(login, token);
     }
     console.log('getUserByLogin', error);
