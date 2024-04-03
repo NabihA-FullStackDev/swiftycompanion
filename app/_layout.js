@@ -5,6 +5,7 @@ import { API_URL } from "@env";
 import { AuthProvider } from "../context/AuthProvider.jsx";
 
 axios.defaults.baseURL = API_URL;
+// Orientation.lockToPortrait();
 
 const Layout = () => {
   return (
