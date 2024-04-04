@@ -23,7 +23,7 @@ const getToken = async (code, setToken, setRefresh) => {
     if (error.message.split(" ").slice(-1)[0] === "429") {
       getToken(code, setToken, setRefresh);
     }
-    console.log(error);
+    console.log('getToken:', error);
   }
 };
 

@@ -24,7 +24,6 @@ const Search = () => {
   const router = useRouter();
 
   const handlePress = async () => {
-    getTokenInfo(token);
     if (input) {
       setSpam(true);
       setLoginError(false);
@@ -53,7 +52,7 @@ const Search = () => {
                   <TextInput
                     style={styles.input}
                     value={input}
-                    onChangeText={(value) => setInput(value)}
+                    onChangeText={(value) => {setLoginError(false); setInput(value)}}
                     placeholder="Login"
                     autoCapitalize="none"
                     placeholderTextColor={"rgba(84,84,84, 1)"}

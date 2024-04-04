@@ -13,8 +13,6 @@ const refreshToken = async (refresh_token, setToken, setRefresh) => {
       refresh_token: refresh_token,
     });
     if (res.status === 200) {
-      console.log('new token', res.data.access_token)
-      console.log('new refresh', res.data.refresh_token)
       setToken(res.data.access_token);
       setRefresh(res.data.refresh_token);
     }
@@ -23,9 +21,9 @@ const refreshToken = async (refresh_token, setToken, setRefresh) => {
       refreshToken(code, setToken, setRefresh);
     }
     if (error.response) {
-      console.log(error.response)
+      console.log('refreshToken Error.res:', error.response)
     } else
-    console.log(error);
+    console.log('refreshToken Error:', error);
   }
 };
 

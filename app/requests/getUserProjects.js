@@ -20,7 +20,7 @@ const getUserProjects = async (user, token, params={}) => {
     if (error.response?.status === 429) {
       return getUserProjects(user, token, params);
     }
-    console.log(error);
+    console.log('getUserProjects:', error);
   }
 };
 

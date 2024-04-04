@@ -20,7 +20,7 @@ const getMe = async (token, setProfile) => {
       console.log('Enter the loop')
       getMe(token, setProfile);
     }
-    console.log(error);
+    console.log('getMe', error);
   }
 };
 

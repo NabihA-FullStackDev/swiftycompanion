@@ -15,7 +15,7 @@ const getTokenInfo = async (token) => {
       console.log("error");
     }
   } catch (error) {
-    console.log(error);
+    console.log('getTokenInfo:', error);
   }
 };
 

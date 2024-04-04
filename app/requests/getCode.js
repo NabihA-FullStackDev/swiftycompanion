@@ -12,13 +12,9 @@ export const getCode = async () => {
     const res = await WebBrowser.openAuthSessionAsync(requestUrl, urlRedirect, {
       ASWebAuthenticationSession: false,
     });
-    if (res.type !== "success") {
-      throw new Error("Login failed");
-    }
     const code = res.url.toString().split("code=")[1];
     return code;
   } catch (error) {
-    console.log(error);
-    return "";
+    console.log('getCode:', error);
   }
 };

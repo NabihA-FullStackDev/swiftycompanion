@@ -19,7 +19,7 @@ const getCoaUser = async (id, token, setCoa) => {
   } catch (error) {
     if (error.response?.status === 429) {
       getCoaUser(id, token, setCoa);
-    } else console.log("getCoaUser", error.response.status);
+    } else console.log("getCoaUser:", error?.response?.status);
   }
 };
 

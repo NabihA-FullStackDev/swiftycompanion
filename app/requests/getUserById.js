@@ -19,7 +19,7 @@ const getUserById = async (id, token) => {
     if (error.response?.status === 429) {
       return getUserById(id, token);
     }
-    console.log("getUserById", error);
+    console.log("getUserById:", error);
   }
 };
 

@@ -24,7 +24,7 @@ const LoginScreen = () => {
       const code = await getCode();
       if (code !== "") {
         await getToken(code, setToken, setRefresh);
-        if (Platform.OS === 'android')
+        if (code && Platform.OS === 'android')
           router.back();
         setSpam(false);
       }

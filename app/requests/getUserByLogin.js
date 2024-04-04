@@ -24,7 +24,7 @@ const getUserByLogin = async (login, token) => {
     if (error.response?.status === 429) {
       return getUserByLogin(login, token);
     }
-    console.log('getUserByLogin', error);
+    console.log('getUserByLogin:', error);
   }
 };
 

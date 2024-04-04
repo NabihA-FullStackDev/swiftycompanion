@@ -67,5 +67,6 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     borderRadius: 10,
     marginHorizontal: 31,
+    paddingBottom: 3,
   },
 });
