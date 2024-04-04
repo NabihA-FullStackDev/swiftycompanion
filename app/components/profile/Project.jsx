@@ -26,6 +26,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     justifyContent: "space-between",
     paddingHorizontal: "2%",
+    paddingVertical: '1%',
     marginVertical: "1%",
     marginHorizontal: "1%",
   },
