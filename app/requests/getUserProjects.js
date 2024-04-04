@@ -17,6 +17,9 @@ const getUserProjects = async (user, token, params={}) => {
       console.log("error");
     }
   } catch (error) {
+    if (error.response?.status === 429) {
+      return getUserProjects(user, token, params);
+    }
     console.log(error);
   }
 };

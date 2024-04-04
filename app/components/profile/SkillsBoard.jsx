@@ -1,16 +1,21 @@
-import {
-  View,
-  Text,
-  StyleSheet,
-  ScrollView,
-  ActivityIndicator,
-} from "react-native";
+import { View, Text, StyleSheet, ScrollView } from "react-native";
 import React from "react";
+import Skill from "./Skill";
 
 const SkillsBoard = ({ skills }) => {
   return (
     <View style={styles.root}>
-      <ScrollView>
+      <ScrollView
+        horizontal={false}
+        showsVerticalScrollIndicator={false}
+        alwaysBounceVertical={true}
+        directionalLockEnabled={true}
+      >
+        {skills && skills.map((skill) => {
+          return (
+            <Skill key={skill.name} name={skill.name} level={skill.level} />
+          );
+        })}
       </ScrollView>
     </View>
   );
@@ -21,8 +26,8 @@ export default SkillsBoard;
 const styles = StyleSheet.create({
   root: {
     backgroundColor: "rgba(198, 198, 198, 0.5)",
-    alignItems: "center",
-    justifyContent: "center",
+    // alignItems: "center",
+    // justifyContent: "center",
     flex: 0.34,
     flexDirection: "column",
     borderRadius: 10,

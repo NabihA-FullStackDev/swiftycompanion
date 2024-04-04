@@ -10,6 +10,7 @@ import { useAuth } from "../../../context/AuthProvider";
 import getTokenInfo from "../../requests/getTokenInfo";
 import refreshToken from "../../requests/refreshToken";
 import getUserProjects from "../../requests/getUserProjects";
+import Project from "./Project";
 
 const ProjectsBoard = ({ login, cursus }) => {
   const [projs, setProjs] = useState(null);
@@ -37,7 +38,24 @@ const ProjectsBoard = ({ login, cursus }) => {
 
   return (
     <View style={styles.root}>
-      <ScrollView style={styles.scroll}>
+      <ScrollView
+        style={styles.scroll}
+        horizontal={false}
+        showsVerticalScrollIndicator={false}
+        alwaysBounceVertical={true}
+        directionalLockEnabled={true}
+      >
+        {projs &&
+          projs.map((proj) => {
+            return (
+              <Project
+                key={proj.id}
+                name={proj.project.name}
+                mark={proj.final_mark}
+                valid={proj["validated?"]}
+              />
+            );
+          })}
       </ScrollView>
     </View>
   );
@@ -48,13 +66,12 @@ export default ProjectsBoard;
 const styles = StyleSheet.create({
   root: {
     backgroundColor: "rgba(198, 198, 198, 0.5)",
-    alignItems: "center",
-    justifyContent: "center",
+    // alignItems: "center",
+    // justifyContent: "center",
     flex: 0.34,
     flexDirection: "column",
     borderRadius: 10,
     marginHorizontal: 31,
   },
-  scroll: {
-  }
+  scroll: {},
 });
