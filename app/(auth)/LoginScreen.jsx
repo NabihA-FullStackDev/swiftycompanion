@@ -9,7 +9,7 @@ import {
 import { StyleSheet } from "react-native";
 
 import { getCode } from "../requests/getCode.js";
-import { useAuth } from "../../context/AuthProvider.jsx";
+import { useAuth } from "../context/AuthProvider.jsx";
 import getToken from "../requests/getToken.js";
 import { useState } from "react";
 import { router } from "expo-router";
@@ -38,7 +38,7 @@ const LoginScreen = () => {
     <View style={styles.root}>
       <ImageBackground
         style={styles.background}
-        source={require("../../assets/Background-cropped.jpg")}
+        source={require("../assets/Background-cropped.jpg")}
       >
         {!spam ? (
           <TouchableOpacity

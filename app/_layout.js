@@ -2,10 +2,9 @@ import { Stack } from "expo-router";
 import axios from "axios";
 
 import { API_URL } from "@env";
-import { AuthProvider } from "../context/AuthProvider.jsx";
+import { AuthProvider } from "./context/AuthProvider.jsx";
 
 axios.defaults.baseURL = API_URL;
-// Orientation.lockToPortrait();
 
 const Layout = () => {
   return (

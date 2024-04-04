@@ -11,7 +11,7 @@ import React, { useState } from "react";
 import FontAwesome from "@expo/vector-icons/FontAwesome.js";
 import { useRouter } from "expo-router";
 
-import { useAuth } from "../../context/AuthProvider.jsx";
+import { useAuth } from "../context/AuthProvider.jsx";
 import getUserByLogin from "../requests/getUserByLogin.js";
 import getTokenInfo from "../requests/getTokenInfo.js";
 import refreshToken from "../requests/refreshToken.js";

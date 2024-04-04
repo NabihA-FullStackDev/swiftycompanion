@@ -10,7 +10,7 @@ const getTokenInfo = async (token) => {
     });
     const data = await res.data;
     if (res?.status === 200) {
-      return (data?.expires_in_seconds);//TODO: delete
+      return (data?.expires_in_seconds);
     } else {
       console.log("error");
     }

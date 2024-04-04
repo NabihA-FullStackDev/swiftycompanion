@@ -7,7 +7,7 @@ import {
 import React, { useEffect, useState } from "react";
 import { useRouter, useLocalSearchParams } from "expo-router";
 import HeaderProfile from "../profile/HeaderProfile";
-import { useAuth } from "../../../context/AuthProvider";
+import { useAuth } from "../../context/AuthProvider";
 import getUserById from "../../requests/getUserById";
 import getCoaUser from "../../requests/getCoaUser";
 import SkillsBoard from "../profile/SkillsBoard";

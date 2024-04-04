@@ -6,7 +6,7 @@ import {
 } from "react-native";
 import React, { useEffect } from "react";
 
-import { useAuth } from "../../context/AuthProvider.jsx";
+import { useAuth } from "../context/AuthProvider.jsx";
 import getMe from "../requests/getMe.js";
 import getCoaUser from "../requests/getCoaUser.js";
 import HeaderProfile from "../components/profile/HeaderProfile.jsx";

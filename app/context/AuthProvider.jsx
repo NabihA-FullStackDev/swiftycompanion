@@ -1,6 +1,5 @@
 import { useSegments, useRouter, useRootNavigationState } from "expo-router";
 import { createContext, useContext, useEffect, useState } from "react";
-import { Platform } from "react-native";
 
 const AuthContext = createContext({
   token: null,

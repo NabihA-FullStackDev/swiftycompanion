@@ -1,5 +1,4 @@
 import axios from "axios";
-import * as Linking from "expo-linking";
 
 import { CLIENT_ID, APP_SECRET } from "@env";
 

@@ -1,6 +1,5 @@
 import { StyleSheet, Text, View } from "react-native";
 import { useEffect, useState } from "react";
-// import * as Progress from 'react-native-progress';
 
 const Skill = ({ name, level }) => {
   const [levelName, setLevelName] = useState("");
@@ -66,7 +65,4 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "flex-end",
   },
-  // levelText: {
-  //   color:
-  // }
 });

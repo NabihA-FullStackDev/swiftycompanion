@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, ScrollView } from "react-native";
+import { View, StyleSheet, ScrollView } from "react-native";
 import React from "react";
 import Skill from "./Skill";
 
@@ -26,8 +26,6 @@ export default SkillsBoard;
 const styles = StyleSheet.create({
   root: {
     backgroundColor: "rgba(198, 198, 198, 0.5)",
-    // alignItems: "center",
-    // justifyContent: "center",
     flex: 0.34,
     flexDirection: "column",
     borderRadius: 10,

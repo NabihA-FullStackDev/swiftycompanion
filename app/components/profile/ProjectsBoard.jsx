@@ -1,12 +1,10 @@
 import {
   View,
-  Text,
   StyleSheet,
   ScrollView,
-  ActivityIndicator,
 } from "react-native";
 import React, { useEffect, useState } from "react";
-import { useAuth } from "../../../context/AuthProvider";
+import { useAuth } from "../../context/AuthProvider";
 import getTokenInfo from "../../requests/getTokenInfo";
 import refreshToken from "../../requests/refreshToken";
 import getUserProjects from "../../requests/getUserProjects";
@@ -39,7 +37,6 @@ const ProjectsBoard = ({ login, cursus }) => {
   return (
     <View style={styles.root}>
       <ScrollView
-        style={styles.scroll}
         horizontal={false}
         showsVerticalScrollIndicator={false}
         alwaysBounceVertical={true}
@@ -66,12 +63,9 @@ export default ProjectsBoard;
 const styles = StyleSheet.create({
   root: {
     backgroundColor: "rgba(198, 198, 198, 0.5)",
-    // alignItems: "center",
-    // justifyContent: "center",
     flex: 0.34,
     flexDirection: "column",
     borderRadius: 10,
     marginHorizontal: 31,
   },
-  scroll: {},
 });
