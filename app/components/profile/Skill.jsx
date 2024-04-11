@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 const Skill = ({ name, level }) => {
   const [levelName, setLevelName] = useState("");
   const [color, setColor] = useState("black");
+  const [percent, setPercent] = useState(0);
 
   const selectLevelName = () => {
     switch (true) {
@@ -27,6 +28,7 @@ const Skill = ({ name, level }) => {
   };
   useEffect(() => {
     selectLevelName();
+    setPercent(((level/21)*100).toPrecision(2));
   }, []);
   return (
     <View style={styles.root}>
@@ -35,7 +37,7 @@ const Skill = ({ name, level }) => {
       </Text>
       <View style={styles.level}>
         <Text style={{ color: color, fontWeight: 700 }}>{levelName}</Text>
-        <Text style={{ fontWeight: 700 }}>{level}</Text>
+        <Text style={{ fontWeight: 700 }}>{level} ({percent}%)</Text>
       </View>
     </View>
   );
@@ -47,6 +49,8 @@ const styles = StyleSheet.create({
   root: {
     width: "auto",
     flex: 1,
+    flexGrow: 1,
+    flexShrink: 1,
     flexDirection: "row",
     alignItems: "center",
     backgroundColor: "rgba(255,255,255, 1)",

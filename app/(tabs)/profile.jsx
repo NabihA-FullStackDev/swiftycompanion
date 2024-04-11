@@ -1,5 +1,6 @@
 import {
   View,
+  Text,
   ActivityIndicator,
   StyleSheet,
   ImageBackground,
@@ -14,8 +15,10 @@ import SkillsBoard from "../components/profile/SkillsBoard.jsx";
 import ProjectsBoard from "../components/profile/ProjectsBoard.jsx";
 import refreshToken from "../requests/refreshToken.js";
 import getTokenInfo from "../requests/getTokenInfo.js";
+import checkCurcus from "../utils/checkCurcus.js"
 
 const Profile = () => {
+  let c = -1;
   const {
     token,
     setToken,
@@ -38,7 +41,7 @@ const Profile = () => {
       if (getTokenInfo(token) < 100)
         refreshToken(refresh, setToken, setRefresh);
       getMe(token, setProfile);
-    }
+      }
     if (profile && token) {
       if (getTokenInfo(token) < 100)
         refreshToken(refresh, setToken, setRefresh);
@@ -51,8 +54,12 @@ const Profile = () => {
       {profile && coalition ? (
         <ImageBackground style={styles.background} source={{ uri: coalition }}>
           <HeaderProfile user={profile} logoff={handlePress} />
-          <SkillsBoard skills={profile.cursus_users[2].skills}/>
-          <ProjectsBoard login={profile.login} cursus={profile?.cursus_users[2].cursus.id}/>
+          { (c = checkCurcus(profile?.cursus_users)) !== -1 ?
+          <>
+          <SkillsBoard skills={profile?.cursus_users[c]?.skills}/>
+          <ProjectsBoard login={profile?.login} cursus={profile?.cursus_users[c]?.cursus?.id}/>
+          </>
+          : <Text style={styles.nocursus}>No Cursus Available</Text>}
         </ImageBackground>
       ) : (
         <View style={styles.background}>
@@ -62,6 +69,7 @@ const Profile = () => {
     </View>
   );
 };
+
 
 export default Profile;
 
@@ -75,4 +83,10 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
     paddingTop: 42,
   },
+  nocursus: {
+    color: 'white',
+    alignSelf: 'center',
+    fontWeight: '900',
+    fontSize: 63
+  }
 });

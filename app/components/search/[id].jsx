@@ -1,5 +1,6 @@
 import {
   View,
+  Text,
   StyleSheet,
   ImageBackground,
   ActivityIndicator,
@@ -14,6 +15,7 @@ import SkillsBoard from "../profile/SkillsBoard";
 import ProjectsBoard from "../profile/ProjectsBoard";
 import getTokenInfo from "../../requests/getTokenInfo";
 import refreshToken from "../../requests/refreshToken";
+import checkCurcus from "../../utils/checkCurcus.js"
 
 const UserSearched = () => {
   const [user, setUser] = useState(null);
@@ -21,6 +23,7 @@ const UserSearched = () => {
   const params = useLocalSearchParams();
   const router = useRouter();
   const { token, setToken, refresh, setRefresh } = useAuth();
+  let c = -1;
 
   useEffect(() => {
     const setUserInfo = async () => {
@@ -43,8 +46,12 @@ const UserSearched = () => {
       {user && coa ? (
         <ImageBackground style={styles.background} source={{ uri: coa }}>
           <HeaderProfile user={user} />
-          <SkillsBoard skills={user?.cursus_users[2]?.skills}/>
-          <ProjectsBoard login={user?.login} cursus={user?.cursus_users[2]?.cursus?.id}/>
+          { (c = checkCurcus(user?.cursus_users)) !== -1 ?
+          <>
+          <SkillsBoard skills={user?.cursus_users[c]?.skills}/>
+          <ProjectsBoard login={user?.login} cursus={user?.cursus_users[c]?.cursus?.id}/>
+          </>
+          : <Text style={styles.nocursus}>No Cursus Available</Text>}
         </ImageBackground>
       ) : (
         <View style={styles.background}>
@@ -67,4 +74,10 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
     paddingTop: 42,
   },
+  nocursus: {
+    color: 'white',
+    alignSelf: 'center',
+    fontWeight: '900',
+    fontSize: 63
+  }
 });

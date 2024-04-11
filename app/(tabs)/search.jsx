@@ -7,7 +7,7 @@ import {
   TextInput,
   Text,
 } from "react-native";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import FontAwesome from "@expo/vector-icons/FontAwesome.js";
 import { useRouter } from "expo-router";
 
@@ -21,14 +21,22 @@ const Search = () => {
   const [spam, setSpam] = useState(false);
   const [loginError, setLoginError] = useState(false);
   const { token, setToken, refresh, setRefresh, profile, coalition } = useAuth();
+  const [localToken, setLocalToken] = useState(null);
   const router = useRouter();
+
+  useEffect(() => {
+    if (localToken) {
+      setToken(localToken);
+    }
+  }, [localToken])
 
   const handlePress = async () => {
     if (input) {
+      const token_check = await getTokenInfo(token);
       setSpam(true);
       setLoginError(false);
-      if (getTokenInfo(token) < 100)
-        refreshToken(refresh, setToken, setRefresh);
+      if (token_check < 100 || token_check === 401)
+        await refreshToken(refresh, setLocalToken, setRefresh);
       const id = await getUserByLogin(input.toLocaleLowerCase(), token);
       if (id) {
         router.push(`/components/search/${id}`);

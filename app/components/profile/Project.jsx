@@ -20,6 +20,8 @@ const styles = StyleSheet.create({
   root: {
     width: "auto",
     flex: 1,
+    flexGrow: 1,
+    flexShrink: 1,
     flexDirection: "row",
     alignItems: 'center',
     backgroundColor: "rgba(255,255,255, 1)",

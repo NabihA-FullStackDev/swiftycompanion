@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView } from "react-native";
 import FontAwesome from "@expo/vector-icons/FontAwesome.js";
 import { useRouter } from "expo-router";
 
@@ -21,7 +21,7 @@ const HeaderProfile = ({ user, logoff = null }) => {
       )}
 
       <Image style={styles.logo} source={{ uri: user?.image?.link }} />
-      <View style={styles.info}>
+      <ScrollView style={styles.info}>
         <Text
           style={styles.detail_login}
           adjustsFontSizeToFit
@@ -38,7 +38,7 @@ const HeaderProfile = ({ user, logoff = null }) => {
         </Text>
         <Text style={styles.details}>Correction: {user?.correction_point}</Text>
         <Text style={styles.details}>Wallet: {user?.wallet} ₳</Text>
-      </View>
+      </ScrollView>
     </View>
   );
 };
@@ -49,36 +49,35 @@ const styles = StyleSheet.create({
   root: {
     backgroundColor: "rgba(198, 198, 198, 0.5)",
     alignItems: "center",
-    justifyContent: "left",
+    justifyContent: 'center',
     flex: 0.2,
     flexDirection: "row",
     borderRadius: 10,
     marginHorizontal: 31,
-    paddingLeft: 21,
+    paddingHorizontal: 10,
   },
   logo: {
     width: 90,
     height: 90,
     borderRadius: 100,
-    marginRight: 21,
+    marginLeft: '10%',
+    paddingHorizontal: 10,
   },
   info: {
-    width: "64%",
     flexDirection: "column",
+    paddingHorizontal: 10,
   },
   detail_login: {
     fontSize: 21,
     fontWeight: "700",
     color: "black",
     alignSelf: "center",
-    marginRight: 42,
   },
   details: {
     fontSize: 15,
     fontWeight: "700",
     color: "black",
     alignSelf: "center",
-    marginRight: 42,
   },
   logoff: {
     position: "absolute",

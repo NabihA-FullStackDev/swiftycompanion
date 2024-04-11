@@ -16,6 +16,7 @@ const getTokenInfo = async (token) => {
     }
   } catch (error) {
     console.log('getTokenInfo:', error);
+    return error?.response?.status
   }
 };
 
