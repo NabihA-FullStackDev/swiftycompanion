@@ -32,16 +32,17 @@ const Search = () => {
 
   const handlePress = async () => {
     if (input) {
-      const token_check = await getTokenInfo(token);
+      const inputCheck = input.toLocaleLowerCase().trim()
       setSpam(true);
       setLoginError(false);
-      if (token_check < 100 || token_check === 401)
-        await refreshToken(refresh, setLocalToken, setRefresh);
-      const id = await getUserByLogin(input.toLocaleLowerCase(), token);
-      if (id) {
-        router.push(`/components/search/${id}`);
-      } else {
-        setLoginError(true);
+      setInput(inputCheck);
+      if (inputCheck != '') {
+        const id = await getUserByLogin(inputCheck, token);
+        if (id) {
+          router.push(`/components/search/${id}`);
+        } else {
+          setLoginError(true);
+        }
       }
       setSpam(false);
     }
