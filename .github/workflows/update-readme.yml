@@ -1,0 +1,28 @@
+name: Update README
+
+on:
+  schedule:
+    - cron: '0 8 * * *'
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Update README
+        run: |
+          echo "Dernière mise à jour : $(date)" > README.md
+
+      - name: Commit changes
+        run: |
+          git config --local user.name "Nabih A"
+          git config --local user.email "ali.nabih@gmail.com"
+          git add README.md
+          git commit -m "Mise à jour automatique du README"
+
+      - name: Push changes
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
