@@ -15,7 +15,7 @@
     "axios": "^1.6.0",
     "expo": "^49.0.3",
     "expo-constants": "~14.4.2",
-    "expo-crypto": "~12.4.1",
+    "expo-crypto": "~13.0.2",
     "expo-linking": "~5.0.2",
     "expo-router": "2.0.0",
     "expo-splash-screen": "~0.20.4",
